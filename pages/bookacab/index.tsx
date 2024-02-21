@@ -2,15 +2,27 @@ import NavBar from '@/components/header/NavBar';
 import { Button } from '@/components/ui/button';
 import { DatePicker } from '@/components/ui/date-picker';
 import { Input } from '@/components/ui/input';
-import { Select, SelectContent, SelectItem, SelectTrigger } from '@/components/ui/select';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+} from '@/components/ui/select';
 import { toast } from '@/components/ui/use-toast';
 import { vehicleTypes } from '@/constants/constants';
+import ar from '@/locales/ar';
+import en from '@/locales/en';
 import { addBooking } from '@/services/booking';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import React, { useState } from 'react'
+import { useRouter } from 'next/router';
+import React, { useState } from 'react';
 
 const BookACab = () => {
-    const [id, setId] = useState<string>('0');
+  const router = useRouter();
+  const { locale } = router;
+  const t = locale === 'en' ? en : ar;
+
+  const [id, setId] = useState<string>('0');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [whatsAppWithCC, setWhatsAppWithCC] = useState('');
@@ -23,7 +35,7 @@ const BookACab = () => {
   const { mutate: addOrEditRecord, isPending } = useMutation({
     mutationFn: async () => {
       const postData = {
-        id:id,
+        id: id,
         tenantId: 0,
         name: name,
         email: email,
@@ -31,7 +43,7 @@ const BookACab = () => {
         vehicleType: vehicleType,
         pickUpLocation: pickUpLocation,
         destination: destination,
-        bookingDate: date
+        bookingDate: date,
       };
       const result = await addBooking(postData);
       return result;
@@ -189,4 +201,4 @@ const BookACab = () => {
   );
 }
 
-export default BookACab
+export default BookACab;

@@ -47,4 +47,9 @@ export default {
   vehicleType: "وہیکل ٹائپ",
   pickUpLocation: "پک اپ لوکیشن",
   destination : "منزل",
+  date: "تاریخ",
+  bookACab: "کیب بک کریں",
+  bookNow: "بک کریں",
+  pickADate: "تاریخ منتخب کریں",
+  submit:"درج کریں",
 };

@@ -105,13 +105,6 @@ const NavBar: React.FC = () => {
       document.removeEventListener('click', handleDocumentClick);
     };
   }, []);
-  const handleImageError = (
-    event: React.SyntheticEvent<HTMLImageElement, Event>
-  ) => {
-    // This function is called when the logo image encounters an error.
-    // You can set a default image here.
-    event.currentTarget.src = 'defaultLogo.png'; // Display vercel.svg on error
-  };
   return (
     <div className='w-full bg-gray-800'>
       <div className='mx-auto px-2 sm:px-6 lg:px-8'>
@@ -136,12 +129,20 @@ const NavBar: React.FC = () => {
             </button>
           </div>
           <div className='flex flex-shrink-0 items-center'>
-            <img
+            {logo ? (
+              <img
               className='hidden h-8 w-auto md:block lg:block'
               src={logo}
               alt='Logo'
-              onError={handleImageError}
             />
+            ):(
+              <img
+              className='hidden h-8 w-auto md:block lg:block'
+              src='cabsLogo.jpg'
+              alt='Logo'
+            />
+            )}
+            
           </div>
 
           <div className='hidden sm:ml-6 sm:flex sm:items-center'>

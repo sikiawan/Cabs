@@ -121,12 +121,10 @@ const Login = () => {
   }
   return (
     <div className='flex min-h-screen items-center justify-center bg-[#f5f6f9]'>
-      <Image
+      <img
         className='fixed left-0 float-left ml-10 mt-10 hidden h-[450px] md:block'
-        src='/public/POS.png'
+        src='cabLogin.jpg'
         alt='image'
-        width={100}
-        height={100}
       />
       <div className='fixed right-0 flex h-screen w-full flex-col items-center justify-center rounded-bl-2xl rounded-tl-2xl bg-white shadow-md md:w-[500px] dark:bg-gray-900'>
         <div className='w-full max-w-md px-4 py-8 md:px-8 lg:px-16'>

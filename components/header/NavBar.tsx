@@ -222,7 +222,8 @@ const NavBar: React.FC = () => {
           </div>
           <div className='sm:ml-6 sm:flex sm:items-center'>
             {/* Profile dropdown */}
-            <div className='relative ml-3'>
+            {email &&(
+              <div className='relative ml-3'>
               <div className='relative'>
                 <button
                   type='button'
@@ -269,6 +270,8 @@ const NavBar: React.FC = () => {
                 )}
               </div>
             </div>
+            )}
+            
           </div>
         </div>
       </div>

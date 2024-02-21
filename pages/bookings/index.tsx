@@ -139,14 +139,7 @@ const Bookings = () => {
     },
   });
   const { data: bookingData, isLoading } = useQuery({
-    queryKey: [
-      'booking',
-      page,
-      rowsPerPage,
-      nameSearch,
-      sortBy,
-      sortOrder,
-    ],
+    queryKey: ['booking', page, rowsPerPage, nameSearch, sortBy, sortOrder],
     queryFn: () =>
       getBookings(page, rowsPerPage, nameSearch, sortBy, sortOrder),
   });
@@ -423,7 +416,7 @@ const Bookings = () => {
                 <div className='relative rounded-lg bg-background'>
                   <div className='flex items-center justify-between rounded-t border-b p-4 md:p-5 dark:border-gray-600'>
                     <h3 className='text-xl font-semibold text-secondary-foreground'>
-                      Add Or Update Record
+                      {t.bookACab}
                     </h3>
                     <button
                       type='button'
@@ -461,7 +454,7 @@ const Bookings = () => {
                     >
                       {' '}
                       <label className='mb-2 block text-sm font-medium text-secondary-foreground'>
-                        Name
+                        {t.name}
                       </label>
                       <Input
                         type='text'
@@ -469,21 +462,21 @@ const Bookings = () => {
                         id='name'
                         value={name}
                         onChange={(e) => setName(e.target.value)}
-                        placeholder='name'
+                        placeholder={t.name}
                         required
                       />
                       <label className='mb-2 block text-sm font-medium text-secondary-foreground'>
-                        Email
+                        {t.email}
                       </label>
                       <Input
                         type='email'
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        placeholder='email'
+                        placeholder={t.email}
                         required
                       />
                       <label className='mb-2 block text-sm font-medium text-secondary-foreground'>
-                        WhatsApp With Coutry Code
+                        {t.whatsAppWithCC}
                       </label>
                       <Input
                         type='text'
@@ -491,44 +484,49 @@ const Bookings = () => {
                         id='whatsapp'
                         value={whatsAppWithCC}
                         onChange={(e) => setWhatsAppWithCC(e.target.value)}
-                        placeholder='whatsapp'
+                        placeholder={t.whatsAppWithCC}
                         required
                       />
                       <label className='mb-2 block text-sm font-medium text-secondary-foreground'>
-                        Vehicle Type
+                        {t.vehicleType}
                       </label>
                       <Select
                         value={vehicleType}
                         onValueChange={(newValue) => setVehicleType(newValue)}
                       >
                         <SelectTrigger>
-                          {
-                            vehicleTypes.find((op) => op.value === vehicleType)
-                              ?.value
-                          }
+                          {vehicleTypes.find((op) => op.value === vehicleType)
+                            ? locale === 'en'
+                              ? vehicleTypes.find(
+                                  (op) => op.value === vehicleType
+                                )?.value
+                              : vehicleTypes.find(
+                                  (op) => op.value === vehicleType
+                                )?.localizedValue
+                            : null}
                         </SelectTrigger>
                         <SelectContent>
                           {vehicleTypes.map((op) => (
                             <SelectItem value={op.value} key={op.value}>
-                              {op.value}
+                              {locale == 'en' ? op.value : op.localizedValue}
                             </SelectItem>
                           ))}
                         </SelectContent>
                       </Select>
                       <label className='mb-2 block text-sm font-medium text-secondary-foreground'>
-                        Pick Up Location
+                        {t.pickUpLocation}
                       </label>
                       <Input
                         type='text'
-                        name='name'
-                        id='name'
+                        name='pickUpLocation'
+                        id='pickUpLocation'
                         value={pickUpLocation}
                         onChange={(e) => setPickUpLocation(e.target.value)}
-                        placeholder='Pick Up Location'
+                        placeholder={t.pickUpLocation}
                         required
                       />
                       <label className='mb-2 block text-sm font-medium text-secondary-foreground'>
-                        Destination
+                        {t.destination}
                       </label>
                       <Input
                         type='text'
@@ -536,42 +534,50 @@ const Bookings = () => {
                         id='destination'
                         value={destination}
                         onChange={(e) => setDestination(e.target.value)}
-                        placeholder='destination'
+                        placeholder={t.destination}
                         required
                       />
                       <label className='mb-2 block text-sm font-medium text-secondary-foreground'>
-                        Status
+                        {t.status}
                       </label>
                       <Select
                         value={bookingStatus}
                         onValueChange={(newValue) => setBookingStatus(newValue)}
                       >
                         <SelectTrigger>
-                          {
-                            bookingStatuses.find(
-                              (op) => op.value === bookingStatus
-                            )?.value
-                          }
+                          {bookingStatuses.find((op) => op.value === bookingStatus)
+                            ? locale === 'en'
+                              ? bookingStatuses.find(
+                                  (op) => op.value === bookingStatus
+                                )?.value
+                              : bookingStatuses.find(
+                                  (op) => op.value === bookingStatus
+                                )?.localizedValue
+                            : null}
                         </SelectTrigger>
                         <SelectContent>
                           {bookingStatuses.map((op) => (
                             <SelectItem value={op.value} key={op.value}>
-                              {op.value}
+                              {locale == 'en' ? op.value : op.localizedValue}
                             </SelectItem>
                           ))}
                         </SelectContent>
                       </Select>
                       <label className='mb-2 block text-sm font-medium text-secondary-foreground'>
-                        Date
+                        {t.date}
                       </label>
-                      <DatePicker date={date} setDate={setDate} />
+                      <DatePicker
+                        date={date}
+                        setDate={setDate}
+                        label={t.pickADate}
+                      />
                       <Button
                         type='submit'
                         isLoading={isPending}
                         disabled={isPending}
                         className='w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
                       >
-                        Submit
+                        {t.submit}
                       </Button>
                     </form>
                   </div>

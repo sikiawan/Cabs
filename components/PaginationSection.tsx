@@ -7,6 +7,10 @@ import {
     PaginationNext,
     PaginationEllipsis,
   } from '@/components/ui/pagination';
+import ar from '@/locales/ar';
+import en from '@/locales/en';
+import { useRouter } from 'next/router';
+
 export function PaginationSection({
     totalPosts,
     postsPerPage,
@@ -18,6 +22,9 @@ export function PaginationSection({
     currentPage: any;
     setCurrentPage: any;
   }) {
+    const router = useRouter();
+    const { locale } = router;
+    const t = locale === 'en' ? en : ar;
     const pageNumbers = [];
     for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
       pageNumbers.push(i);
@@ -86,13 +93,13 @@ export function PaginationSection({
         <Pagination>
           <PaginationContent>
             <PaginationItem>
-              <PaginationPrevious onClick={handlePrevPage} />
+              <PaginationPrevious onClick={handlePrevPage} >{t.previous}</PaginationPrevious>
             </PaginationItem>
   
             {renderPages()}
   
             <PaginationItem>
-              <PaginationNext onClick={handleNextPage} />
+              <PaginationNext onClick={handleNextPage}>{t.next}</PaginationNext>
             </PaginationItem>
           </PaginationContent>
         </Pagination>

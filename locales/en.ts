@@ -47,4 +47,9 @@ export default {
   vehicleType: "Vehicle Type",
   pickUpLocation: "Pick Up Location",
   destination : "Destination",
+  date:"Date",
+  bookACab: "Book A Cab",
+  bookNow: "Book Now",
+  pickADate: "Pick A Date",
+  submit:"Submit",
 };

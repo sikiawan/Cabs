@@ -20,17 +20,21 @@ export const bookingStatuses = [
   {
     id: 1,
     value: 'newBooking',
+    localizedValue: 'نئی بکنک',
   },
   {
     id: 2,
     value: 'canceled',
+    localizedValue: 'کینسلڈ',
   },
   {
-    id: 2,
+    id: 3,
     value: 'confirmed',
+    localizedValue: 'تصدیق شدہ',
   },{
-    id: 2,
+    id: 4,
     value: 'completed',
+    localizedValue: 'مکمل',
   },
 ];
 
@@ -38,16 +42,21 @@ export const vehicleTypes = [
   {
     id: 1,
     value: 'car',
+    localizedValue: 'کار',
   },
   {
     id: 2,
     value: 'bike',
+    localizedValue: 'بائیک',
   },
   {
-    id: 2,
+    id: 3,
     value: 'pickup',
+    localizedValue: 'پک اپ',
+
   },{
-    id: 2,
+    id: 4,
     value: 'van',
+    localizedValue: 'وین',
   },
 ];

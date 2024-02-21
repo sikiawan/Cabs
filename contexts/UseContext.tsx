@@ -37,7 +37,7 @@ export const ContextProvider: React.FC<{ children: ReactNode }> = ({ children })
   const getCookies = () => {
     const clientPreferenceString = cookies.clientPreference || '{}';
     const clientPreference: ClientPreference = JSON.parse(clientPreferenceString);
-    setTheme(clientPreference.theme || 'default');
+    setTheme(clientPreference.theme || 'dark');
     if(clientPreference.language === 'ar'){
       setDirection('rtl');
     }

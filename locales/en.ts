@@ -52,4 +52,5 @@ export default {
   bookNow: "Book Now",
   pickADate: "Pick A Date",
   submit:"Submit",
+  selectVehicleType:"Select vehicle type",
 };

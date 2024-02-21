@@ -491,11 +491,12 @@ const Bookings = () => {
                         {t.vehicleType}
                       </label>
                       <Select
-                        value={vehicleType}
-                        onValueChange={(newValue) => setVehicleType(newValue)}
-                      >
-                        <SelectTrigger>
-                          {vehicleTypes.find((op) => op.value === vehicleType)
+                      value={vehicleType}
+                      onValueChange={(newValue) => setVehicleType(newValue)}
+                    >
+                      <SelectTrigger>
+                        {vehicleType
+                          ? vehicleTypes.find((op) => op.value === vehicleType)
                             ? locale === 'en'
                               ? vehicleTypes.find(
                                   (op) => op.value === vehicleType
@@ -503,16 +504,17 @@ const Bookings = () => {
                               : vehicleTypes.find(
                                   (op) => op.value === vehicleType
                                 )?.localizedValue
-                            : null}
-                        </SelectTrigger>
-                        <SelectContent>
-                          {vehicleTypes.map((op) => (
-                            <SelectItem value={op.value} key={op.value}>
-                              {locale == 'en' ? op.value : op.localizedValue}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
+                            : null
+                          : t.selectVehicleType}
+                      </SelectTrigger>
+                      <SelectContent>
+                        {vehicleTypes.map((op) => (
+                          <SelectItem value={op.value} key={op.value}>
+                            {locale == 'en' ? op.value : op.localizedValue}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
                       <label className='mb-2 block text-sm font-medium text-secondary-foreground'>
                         {t.pickUpLocation}
                       </label>

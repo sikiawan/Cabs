@@ -52,4 +52,5 @@ export default {
   bookNow: "بک کریں",
   pickADate: "تاریخ منتخب کریں",
   submit:"درج کریں",
+  selectVehicleType:"وہیکل ٹائپ سیلکٹ کریں",
 };

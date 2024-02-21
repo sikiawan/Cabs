@@ -80,7 +80,7 @@ const BookACab = () => {
               <div className='bg-dark-navy-blue relative rounded-lg'>
                 <div className='flex items-center justify-between rounded-t p-4 md:p-5'>
                   <h3 className='text-xl font-semibold text-white'>
-                  {t.bookACab}
+                    {t.bookACab}
                   </h3>
                 </div>
                 <div className='rounded-lg border border-gray-400 p-4 md:p-5'>
@@ -92,105 +92,112 @@ const BookACab = () => {
                     }}
                   >
                     <label className='mb-2 block text-sm font-medium text-white'>
-                    {t.name}
-              </label>
-              <Input
-                type='text'
-                name='name'
-                className='bg-navy-blue text-black placeholder-gray-400 focus:outline-none focus:border-none'
-                id='name'
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                placeholder={t.name}
-                required
-              />
-              <label className='mb-2 block text-sm font-medium text-white'>
-              {t.email}
-              </label>
-              <Input
-                type='email'
-                value={email}
-                className='bg-navy-blue text-black placeholder-gray-400 focus:border-none focus:outline-none'
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder={t.email}
-                required
-              />
-              <label className='mb-2 block text-sm font-medium text-white'>
-              {t.whatsAppWithCC}
-              </label>
-              <Input
-                type='text'
-                name='whatsapp'
-                id='whatsapp'
-                className='bg-navy-blue text-black placeholder-gray-400 focus:border-none focus:outline-none'
-                value={whatsAppWithCC}
-                onChange={(e) => setWhatsAppWithCC(e.target.value)}
-                placeholder={t.whatsAppWithCC}
-                required
-              />
-              <label className='mb-2 block text-sm font-medium text-white'>
-              {t.vehicleType}
-              </label>
-              <Select
-                value={vehicleType}
-                onValueChange={(newValue) => setVehicleType(newValue)}
-              >
-                <SelectTrigger>
-                  {
-                    vehicleTypes.find((op) => op.value === vehicleType)
-                      ?.value
-                  }
-                </SelectTrigger>
-                <SelectContent>
-                  {vehicleTypes.map((op) => (
-                    <SelectItem value={op.value} key={op.value}>
-                      {op.value}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-              <label className='mb-2 block text-sm font-medium text-white'>
-              {t.pickUpLocation}
-              </label>
-              <Input
-                type='text'
-                name='pickUpLocation'
-                id='pickUpLocation'
-                className='bg-navy-blue text-black placeholder-gray-400 focus:border-none focus:outline-none'
-                value={pickUpLocation}
-                onChange={(e) => setPickUpLocation(e.target.value)}
-                placeholder={t.pickUpLocation}
-                required
-              />
-              <label className='mb-2 block text-sm font-medium text-white'>
-              {t.destination}
-              </label>
-              <Input
-                type='text'
-                name='destination'
-                id='destination'
-                className='bg-navy-blue text-black placeholder-gray-400 focus:border-none focus:outline-none'
-                value={destination}
-                onChange={(e) => setDestination(e.target.value)}
-                placeholder={t.destination}
-                required
-              />
-              <label className='mb-2 block text-sm font-medium text-white'>
-              {t.pickADate}
-              </label>
-              <DatePicker
-                date={date}
-                setDate={setDate}
-                label={t.pickADate}
-              />
-              <Button
-                type='submit'
-                isLoading={isPending}
-                disabled={isPending}
-                className='w-full rounded-lg bg-teal-500 px-5 py-2.5 text-lg font-bold text-white hover:bg-teal-600'
-              >
-                {t.bookNow}
-              </Button>
+                      {t.name}
+                    </label>
+                    <Input
+                      type='text'
+                      name='name'
+                      className='bg-navy-blue text-black placeholder-gray-400 focus:border-none focus:outline-none'
+                      id='name'
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      placeholder={t.name}
+                      required
+                    />
+                    <label className='mb-2 block text-sm font-medium text-white'>
+                      {t.email}
+                    </label>
+                    <Input
+                      type='email'
+                      value={email}
+                      className='bg-navy-blue text-black placeholder-gray-400 focus:border-none focus:outline-none'
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder={t.email}
+                      required
+                    />
+                    <label className='mb-2 block text-sm font-medium text-white'>
+                      {t.whatsAppWithCC}
+                    </label>
+                    <Input
+                      type='text'
+                      name='whatsapp'
+                      id='whatsapp'
+                      className='bg-navy-blue text-black placeholder-gray-400 focus:border-none focus:outline-none'
+                      value={whatsAppWithCC}
+                      onChange={(e) => setWhatsAppWithCC(e.target.value)}
+                      placeholder={t.whatsAppWithCC}
+                      required
+                    />
+                    <label className='mb-2 block text-sm font-medium text-white'>
+                      {t.vehicleType}
+                    </label>
+                    <Select
+                      value={vehicleType}
+                      onValueChange={(newValue) => setVehicleType(newValue)}
+                    >
+                      <SelectTrigger>
+                        {vehicleType
+                          ? vehicleTypes.find((op) => op.value === vehicleType)
+                            ? locale === 'en'
+                              ? vehicleTypes.find(
+                                  (op) => op.value === vehicleType
+                                )?.value
+                              : vehicleTypes.find(
+                                  (op) => op.value === vehicleType
+                                )?.localizedValue
+                            : null
+                          : t.selectVehicleType}
+                      </SelectTrigger>
+                      <SelectContent>
+                        {vehicleTypes.map((op) => (
+                          <SelectItem value={op.value} key={op.value}>
+                            {locale == 'en' ? op.value : op.localizedValue}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                    <label className='mb-2 block text-sm font-medium text-white'>
+                      {t.pickUpLocation}
+                    </label>
+                    <Input
+                      type='text'
+                      name='pickUpLocation'
+                      id='pickUpLocation'
+                      className='bg-navy-blue text-black placeholder-gray-400 focus:border-none focus:outline-none'
+                      value={pickUpLocation}
+                      onChange={(e) => setPickUpLocation(e.target.value)}
+                      placeholder={t.pickUpLocation}
+                      required
+                    />
+                    <label className='mb-2 block text-sm font-medium text-white'>
+                      {t.destination}
+                    </label>
+                    <Input
+                      type='text'
+                      name='destination'
+                      id='destination'
+                      className='bg-navy-blue text-black placeholder-gray-400 focus:border-none focus:outline-none'
+                      value={destination}
+                      onChange={(e) => setDestination(e.target.value)}
+                      placeholder={t.destination}
+                      required
+                    />
+                    <label className='mb-2 block text-sm font-medium text-white'>
+                      {t.pickADate}
+                    </label>
+                    <DatePicker
+                      date={date}
+                      setDate={setDate}
+                      label={t.pickADate}
+                    />
+                    <Button
+                      type='submit'
+                      isLoading={isPending}
+                      disabled={isPending}
+                      className='w-full rounded-lg bg-teal-500 px-5 py-2.5 text-lg font-bold text-white hover:bg-teal-600'
+                    >
+                      {t.bookNow}
+                    </Button>
                   </form>
                 </div>
               </div>
@@ -200,6 +207,6 @@ const BookACab = () => {
       </section>
     </>
   );
-}
+};
 
 export default BookACab;

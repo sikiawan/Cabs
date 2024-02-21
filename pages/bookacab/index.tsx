@@ -80,7 +80,7 @@ const BookACab = () => {
               <div className='bg-dark-navy-blue relative rounded-lg'>
                 <div className='flex items-center justify-between rounded-t p-4 md:p-5'>
                   <h3 className='text-xl font-semibold text-white'>
-                    Book your cab
+                  {t.bookACab}
                   </h3>
                 </div>
                 <div className='rounded-lg border border-gray-400 p-4 md:p-5'>
@@ -92,7 +92,7 @@ const BookACab = () => {
                     }}
                   >
                     <label className='mb-2 block text-sm font-medium text-white'>
-                Name
+                    {t.name}
               </label>
               <Input
                 type='text'
@@ -101,22 +101,22 @@ const BookACab = () => {
                 id='name'
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder='Name'
+                placeholder={t.name}
                 required
               />
               <label className='mb-2 block text-sm font-medium text-white'>
-                Email
+              {t.email}
               </label>
               <Input
                 type='email'
                 value={email}
                 className='bg-navy-blue text-black placeholder-gray-400 focus:border-none focus:outline-none'
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder='Email'
+                placeholder={t.email}
                 required
               />
               <label className='mb-2 block text-sm font-medium text-white'>
-                WhatsApp With Country Code
+              {t.whatsAppWithCC}
               </label>
               <Input
                 type='text'
@@ -125,11 +125,11 @@ const BookACab = () => {
                 className='bg-navy-blue text-black placeholder-gray-400 focus:border-none focus:outline-none'
                 value={whatsAppWithCC}
                 onChange={(e) => setWhatsAppWithCC(e.target.value)}
-                placeholder='WhatsApp With Country Code'
+                placeholder={t.whatsAppWithCC}
                 required
               />
               <label className='mb-2 block text-sm font-medium text-white'>
-                Vehicle Type
+              {t.vehicleType}
               </label>
               <Select
                 value={vehicleType}
@@ -150,7 +150,7 @@ const BookACab = () => {
                 </SelectContent>
               </Select>
               <label className='mb-2 block text-sm font-medium text-white'>
-                Pick Up Location
+              {t.pickUpLocation}
               </label>
               <Input
                 type='text'
@@ -159,11 +159,11 @@ const BookACab = () => {
                 className='bg-navy-blue text-black placeholder-gray-400 focus:border-none focus:outline-none'
                 value={pickUpLocation}
                 onChange={(e) => setPickUpLocation(e.target.value)}
-                placeholder='Pick Up Location'
+                placeholder={t.pickUpLocation}
                 required
               />
               <label className='mb-2 block text-sm font-medium text-white'>
-                Destination
+              {t.destination}
               </label>
               <Input
                 type='text'
@@ -172,15 +172,16 @@ const BookACab = () => {
                 className='bg-navy-blue text-black placeholder-gray-400 focus:border-none focus:outline-none'
                 value={destination}
                 onChange={(e) => setDestination(e.target.value)}
-                placeholder='Destination'
+                placeholder={t.destination}
                 required
               />
               <label className='mb-2 block text-sm font-medium text-white'>
-                Date
+              {t.pickADate}
               </label>
               <DatePicker
                 date={date}
                 setDate={setDate}
+                label={t.pickADate}
               />
               <Button
                 type='submit'
@@ -188,7 +189,7 @@ const BookACab = () => {
                 disabled={isPending}
                 className='w-full rounded-lg bg-teal-500 px-5 py-2.5 text-lg font-bold text-white hover:bg-teal-600'
               >
-                Book Now
+                {t.bookNow}
               </Button>
                   </form>
                 </div>

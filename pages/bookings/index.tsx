@@ -233,7 +233,7 @@ const Bookings = () => {
     <>
       <NavBar />
       <section className='my-2 flex items-center justify-center'>
-        <div className='container'>
+        <div className='container mt-16'>
           <div className='flex items-end justify-between gap-3'>
             {/* <Input
               className='h-12 w-full sm:max-w-[44%]'

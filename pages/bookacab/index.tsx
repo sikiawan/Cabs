@@ -1,3 +1,4 @@
+import CustomButton from '@/components/CustomButton';
 import NavBar from '@/components/header/NavBar';
 import { Button } from '@/components/ui/button';
 import { DatePicker } from '@/components/ui/date-picker';
@@ -60,6 +61,7 @@ const BookACab = () => {
       queryClient.invalidateQueries({ queryKey: ['bookings'] });
     },
   });
+
   const clear = () => {
     setId('0');
     setName('');
@@ -70,16 +72,47 @@ const BookACab = () => {
     setVehicleType('');
     setDate(undefined);
   };
+
   return (
     <>
       <NavBar />
-      <section className='bg-dark-navy-blue my-2 flex items-center justify-center'>
+      <section className='flex items-center justify-center'>
         <div className='container'>
-          <div className='bg-navy-blue mx-auto flex items-center justify-center overflow-y-auto overflow-x-hidden rounded-3xl'>
-            <div className='relative max-h-full w-full max-w-md p-4'>
-              <div className='bg-dark-navy-blue relative rounded-lg'>
+          <div
+            id='cover'
+            className='md:mx-34 mt-16 flex items-center justify-center overflow-y-auto overflow-x-hidden rounded-2xl bg-[#1f32e0] lg:mx-24'
+          >
+            <div className='hidden w-1/3 md:flex'>
+              <div className='padding-x flex-1'>
+                <img
+                  decoding='async'
+                  width='200'
+                  height='30'
+                  src='https://www.umrahcabs4u.com/wp-content/uploads/2023/12/UmrahCabs4U-LogoXwhite.png.webp'
+                  className='h-auto w-full'
+                  alt='UmrahCabs4U-Logo'
+                  srcSet='
+    https://www.umrahcabs4u.com/wp-content/uploads/2023/12/UmrahCabs4U-LogoXwhite.png.webp 200w,
+    https://www.umrahcabs4u.com/wp-content/uploads/2023/12/UmrahCabs4U-LogoXwhite-50x8.png.webp 50w,
+    https://www.umrahcabs4u.com/wp-content/uploads/2023/12/UmrahCabs4U-LogoXwhite-150x23.png.webp 150w'
+                  sizes='(max-width:767px) 200px, 200px'
+                />
+
+                <h1 className='hero__title text-white'>
+                  {t.homeMain}
+                </h1>
+
+                <CustomButton
+                  title={t.specialDiscount}
+                  containerStyles='bg-primary-blue text-white rounded-full mt-10'
+                  handleClick={() => {}}
+                />
+              </div>
+            </div>
+            <div id='main' className='max-w-md p-4 md:w-1/3'>
+              <div className='relative rounded-lg bg-[#2c40f4]'>
                 <div className='flex items-center justify-between rounded-t p-4 md:p-5'>
-                  <h3 className='text-xl font-semibold text-white'>
+                  <h3 className='text-xl font-semibold text-secondary-foreground'>
                     {t.bookACab}
                   </h3>
                 </div>
@@ -202,6 +235,11 @@ const BookACab = () => {
                 </div>
               </div>
             </div>
+            <img
+              className='hidden w-1/3 rounded-br-2xl rounded-tr-2xl object-cover md:block'
+              src='makkah.jpg'
+              alt='image'
+            />
           </div>
         </div>
       </section>

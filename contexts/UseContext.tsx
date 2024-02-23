@@ -48,7 +48,7 @@ export const ContextProvider: React.FC<{ children: ReactNode }> = ({ children })
   };
   const changeLanguage = (lang: string) => {
     setLang(lang);
-    if(lang === 'ar'){
+    if(lang !== 'en'){
       setDirection('rtl');
     }
     else{

@@ -53,4 +53,13 @@ export default {
   pickADate: "Pick A Date",
   submit:"Submit",
   selectVehicleType:"Select vehicle type",
+  cabsBookingMain: "Choose from our fleet of",
+  cabsBookingSubMain: "100+ unique cabs, available 24/7, redefining your every journey.",
+  exploreCabs: "Explore Cabs",
+  home: "Home",
+  aboutUs: "About Us",
+  cabsBooking : "Cabs Booking",
+  faq: "FAQ",
+  homeMain : "Best Umrah Cabs Service",
+  specialDiscount: "Special Discount",
 };

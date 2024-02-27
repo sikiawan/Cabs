@@ -53,15 +53,19 @@ export default {
     pickADate: "تاریخ منتخب کریں",
     submit:"درج کریں",
     selectVehicleType:"وہیکل ٹائپ سیلکٹ کریں",
-    cabsBookingMain: "اختر من أسطولنا من",
-    cabsBookingSubMain: "أكثر من 100 سيارة أجرة فريدة متاحة على مدار 24 ساعة طوال أيام الأسبوع، مما يعيد تعريف كل رحلة تقوم بها.",
-    exploreCabs: "اكتشف سيارات الأجرة",
+    cabsBookingMain: "ہمارے لسٹ میں سے چنیں",
+    cabsBookingSubMain: "سو سے زائد منفرد گاڑیاں جو ہمہ وقت میسر ہیں.",
+    exploreCabs: "کیبز تلاش کریں",
     home: "ہوم",
     aboutUs: "ہمارے متعلق",
     cabsBooking : "کیب بکینگ",
     faq: "سول و جواب",
     homeMain : "عمرہ کیب کی بہترین سروس",
     specialDiscount: "خصوصی رعائیت",
-  
+    cabCatalogue : "کیب کیٹا لوگ",
+    exploreCabsText: "اپنی پسندیدہ کیبز دیکھیں",
+    allRightsReserved:"سارے رائٹس محفوظ ہیں",
+    privacyPolicy:"پرائیویسی اور پالیسی",
+    termsCondition:"شرائط و ضوابط",
   };
   

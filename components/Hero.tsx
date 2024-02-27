@@ -5,10 +5,11 @@ import CustomButton from '@/components/CustomButton';
 import { useRouter } from 'next/router';
 import en from '@/locales/en';
 import ar from '@/locales/ar';
+import ur from '@/locales/ur';
 const Hero = () => {
   const router = useRouter();
   const { locale } = router;
-  const t = locale === 'en' ? en : ar;
+  const t = locale === 'en' ? en : (locale === 'ar' ? ar : ur);
   const handleScroll = () => {
     const nextSection = document.getElementById('discover');
 

@@ -141,29 +141,35 @@ export const fuels = [
 export const footerLinks = [
   {
     title: "About",
+    urTitle:"ہمارے بارے",
+    arTitle:"متعلق",
     links: [
-      { title: "How it works", url: "/" },
-      { title: "Featured", url: "/" },
-      { title: "Partnership", url: "/" },
-      { title: "Bussiness Relation", url: "/" },
+      { title: "How it works", urTitle:"کیسے کام کرتا ہے", arTitle:"کیسے کام کرتا ہے", url: "/" },
+      { title: "Featured", urTitle:"فیچرڈ", arTitle:"فیچرڈ", url: "/" },
+      { title: "Partnership", urTitle:"سانجھا کام", arTitle:"پارٹرنرشپ", url: "/" },
+      { title: "Bussiness Relation", urTitle:"کاروباری", arTitle:"تعلقات", url: "/" },
     ],
   },
   {
     title: "Company",
+    urTitle:"کمپنی",
+    arTitle:"کمپنی",
     links: [
-      { title: "Events", url: "/" },
-      { title: "Blog", url: "/" },
-      { title: "Podcast", url: "/" },
-      { title: "Invite a friend", url: "/" },
+      { title: "Events", urTitle:"تہوار", arTitle:"ایونٹس", url: "/" },
+      { title: "Blog", urTitle:"بلاگ", arTitle:"بلاگز", url: "/" },
+      { title: "Podcast", urTitle:"پوڈکاسٹ", arTitle:"پاڈکاسٹس", url: "/" },
+      { title: "Invite a friend", urTitle:"دوستوں کو مدعو کریں", arTitle:"انوائٹ کریں", url: "/" },
     ],
   },
   {
     title: "Socials",
+    urTitle:"سوشل",
+    arTitle:"سوشل",
     links: [
-      { title: "Discord", url: "/" },
-      { title: "Instagram", url: "/" },
-      { title: "Twitter", url: "/" },
-      { title: "Facebook", url: "/" },
+      { title: "Discord", urTitle:"ختم کریں", arTitle:"ڈسکارڈ", url: "/" },
+      { title: "Instagram", urTitle:"انسٹاگرام", arTitle:"انستاگرام", url: "/" },
+      { title: "Twitter", urTitle:"ٹوٹر", arTitle:"توتر", url: "/" },
+      { title: "Facebook", urTitle:"فیس بک", arTitle:"فیس بکس", url: "/" },
     ],
   },
 ];

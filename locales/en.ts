@@ -62,4 +62,10 @@ export default {
   faq: "FAQ",
   homeMain : "Best Umrah Cabs Service",
   specialDiscount: "Special Discount",
+  cabCatalogue : "Cab Catalogue",
+  exploreCabsText: "Explore out cabs you might like",
+  allRightsReserved:"All Rights Reserved",
+  privacyPolicy:"Privacy & Policy",
+  termsCondition:"Terms & Condition",
+
 };

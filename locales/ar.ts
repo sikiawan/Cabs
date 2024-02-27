@@ -62,5 +62,9 @@ export default {
   faq: "سول و جواب",
   homeMain : "عمرہ کیب کی بہترین سروس",
   specialDiscount: "خصوصی رعائیت",
-
+  cabCatalogue : "کیب کیٹا لوگ",
+  exploreCabsText: "اپنی پسندیدہ کیبز دیکھیں",
+  allRightsReserved:"سارے رائٹس محفوظ ہیں",
+  privacyPolicy:"پرائیویسی اور پالیسی",
+  termsCondition:"شرائط و ضوابط",
 };

@@ -12,6 +12,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger } from '../ui/select';
 import { ClientPreference } from '@/types/types';
 import Link from 'next/link';
 import { AlignJustify, X } from 'lucide-react';
+import ur from '@/locales/ur';
+import Image from 'next/image';
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
@@ -28,7 +30,7 @@ interface MenuItem {
 const NavBar: React.FC = () => {
   const router = useRouter();
   const { locale } = router;
-  const t = locale === 'en' ? en : ar;
+  const t = locale === 'en' ? en : (locale === 'ar' ? ar : ur);
 
   const { changeLanguage, changeTheme, theme } = Context();
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -146,14 +148,23 @@ const NavBar: React.FC = () => {
               alt='Logo'
             />
             )} */}
-            <img
+
+
+            {/* <img
               className='logo-main scale-with-grid mx-8 w-16 sm:mx-0 sm:w-48'
               src='https://www.umrahcabs4u.com/wp-content/uploads/2023/12/UmrahCabs4U-Logo.png'
               data-retina='https://www.umrahcabs4u.com/wp-content/uploads/2023/12/UmrahCabs4U-LogoX2.png'
               data-height='45'
               alt='UmrahCabs4U-Logo'
               data-no-retina=''
-            ></img>
+            ></img> */}
+            <Image
+            src='/logo.svg'
+            alt='logo'
+            width={118}
+            height={18}
+            className='object-contain'
+          />
           </div>
 
           <div className='hidden sm:ml-6 sm:flex sm:items-center'>
@@ -272,12 +283,12 @@ const NavBar: React.FC = () => {
               value={locale}
               onValueChange={(newValue) => changeLanguage(newValue)}
             >
-              <SelectTrigger>
+              <SelectTrigger className='bg-transparent'>
                 {LangDropDown.find((op) => op.value === locale)?.label}
               </SelectTrigger>
               <SelectContent>
                 {LangDropDown.map((op) => (
-                  <SelectItem value={op.value} key={op.value}>
+                  <SelectItem className='bg-white' value={op.value} key={op.value}>
                     {op.label}
                   </SelectItem>
                 ))}

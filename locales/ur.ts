@@ -67,5 +67,12 @@ export default {
     allRightsReserved:"سارے رائٹس محفوظ ہیں",
     privacyPolicy:"پرائیویسی اور پالیسی",
     termsCondition:"شرائط و ضوابط",
+    subject: "عنوان",
+    message: "پیغام",
+    send: "بھیجیں",
+    contactUs : "رابطہ کریں",
+    yourProfile: "آپ کی پروفائل",
+    signOut : "باہر جائیں",
+    settings : "ترتیبات",
   };
   

@@ -8,7 +8,6 @@ export const getBookings = async (
   sortBy: string,
   sortOrder: string
 ) => {
-  debugger;
   const url = `${API_CONFIG.BASE_URL}api/Booking/GetBookings`;
   const data = {
     page: page,
@@ -45,7 +44,6 @@ export const getBooking = async (id: string) => {
 // posting a booking
 export async function addBooking(postData: any) {
   try {
-debugger;
     const response = await fetch(`${API_CONFIG.BASE_URL}api/Booking`, {
   method: 'POST',
   headers: {
@@ -64,7 +62,6 @@ debugger;
 
 // Delete a booking
 export async function deleteBooking(id: string) {
-  debugger;
   const Options = {
     method: 'DELETE',
     headers: { 'Content-Type': 'application/json' },
@@ -76,4 +73,23 @@ export async function deleteBooking(id: string) {
   );
   const json = await response.json();
   return json;
+}
+
+// contact us
+export async function contactUs(postData: any) {
+  try {
+    const response = await fetch(`${API_CONFIG.BASE_URL}api/Booking/ContactUs`, {
+  method: 'POST',
+  headers: {
+    'Accept': '*/*',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(postData)
+});
+    const json = await response.json();
+
+    return json;
+  } catch (error) {
+    return error;
+  }
 }

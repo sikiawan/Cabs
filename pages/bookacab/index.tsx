@@ -80,33 +80,119 @@ const BookACab = () => {
     setVehicleType('');
     setDate(undefined);
   };
-  const [allCars, setAllCars] = useState<any>([]);
+  //const [allCars, setAllCars] = useState<any>([]);
   const [isDataEmpty, setIsDataEmpty] = useState(false);
   const slideshowImages = [
     'makkah-cover.jpg',
-    'kaba.jpg',
-    'nabvi.jpg',
+    //'kaba.jpg',
+    //'nabvi.jpg',
   ];
-
+const allCars = [
+  {
+    city_mpg: 16,
+    class: 'compact car',
+    combination_mpg: 19,
+    cylinders: 6,
+    displacement: 2.8,
+    drive: 'fwd',
+    fuel_type: 'gas',
+    highway_mpg: 26,
+    make: 'audi',
+    model: 'a4',
+    transmission: 'a',
+    year: 1996
+  },
+  {
+    city_mpg: 17,
+    class: 'compact car',
+    combination_mpg: 20,
+    cylinders: 6,
+    displacement: 2.8,
+    drive: 'fwd',
+    fuel_type: 'gas',
+    highway_mpg: 25,
+    make: 'audi',
+    model: 'a4',
+    transmission: 'm',
+    year: 1996
+  },
+  {
+    city_mpg: 16,
+    class: 'compact car',
+    combination_mpg: 19,
+    cylinders: 6,
+    displacement: 2.8,
+    drive: 'awd',
+    fuel_type: 'gas',
+    highway_mpg: 25,
+    make: 'audi',
+    model: 'a4 quattro',
+    transmission: 'a',
+    year: 1996
+  },
+  {
+    city_mpg: 17,
+    class: 'compact car',
+    combination_mpg: 20,
+    cylinders: 6,
+    displacement: 2.8,
+    drive: 'awd',
+    fuel_type: 'gas',
+    highway_mpg: 24,
+    make: 'audi',
+    model: 'a4 quattro',
+    transmission: 'm',
+    year: 1996
+  },
+  {
+    city_mpg: 18,
+    class: 'compact car',
+    combination_mpg: 21,
+    cylinders: 4,
+    displacement: 1.8,
+    drive: 'fwd',
+    fuel_type: 'gas',
+    highway_mpg: 27,
+    make: 'audi',
+    model: 'a4',
+    transmission: 'a',
+    year: 1997
+  },
+  {
+    city_mpg: 18,
+    class: 'compact car',
+    combination_mpg: 21,
+    cylinders: 4,
+    displacement: 1.8,
+    drive: 'fwd',
+    fuel_type: 'gas',
+    highway_mpg: 27,
+    make: 'audi',
+    model: 'a4',
+    transmission: 'a',
+    year: 1997
+  }
+];
   const coverRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const cars = await fetchCars({
-          manufacturer: '',
-          year: 2022,
-          fuel: '',
-          limit: 10,
-          model: '',
-        });
-        setAllCars(cars);
-        setIsDataEmpty(!Array.isArray(cars) || cars.length < 1);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
+    // const fetchData = async () => {
+    //   try {
+    //     const cars = await fetchCars({
+    //       manufacturer: '',
+    //       year: 2022,
+    //       fuel: '',
+    //       limit: 10,
+    //       model: '',
+    //     });
+    //     console.log(cars);
+    //     setAllCars(cars);
+    //     setIsDataEmpty(!Array.isArray(cars) || cars.length < 1);
+    //   } catch (error) {
+    //     console.error('Error fetching data:', error);
+    //   }
+    // };
 
-    fetchData();
+    // fetchData();
 
 
     let currentIndex = 0;
@@ -127,16 +213,22 @@ const BookACab = () => {
   return (
     <>
       <NavBar />
-      <section className='flex items-center justify-center'>
+      <section className='flex items-center overflow-hidden justify-center'>
         <div className='w-full'>
         <div
             id='cover'
-            ref={coverRef}
+            //ref={coverRef}
             className='mt-16 flex items-center justify-center overflow-y-auto overflow-x-hidden bg-gray-100'
+            style={{
+              backgroundImage: `url(makkah-cover.jpg)`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              // Add any other background properties you need
+            }}
           >
-            <div className='m-32 h-full w-full bg-black bg-opacity-50'>
+            <div className='lg:m-32 lg:p-16 m-16 p-4 h-full w-full bg-black bg-opacity-50'>
               <form
-                className='m-16 space-y-4'
+                className='w-full space-y-4'
                 onSubmit={(e) => {
                   e.preventDefault();
                   addOrEditRecord();
@@ -302,7 +394,7 @@ const BookACab = () => {
           ) : (
             <div className='home__error-container'>
               <h2 className='text-xl font-bold text-black'>Oops, no results</h2>
-              <p>{allCars?.message}</p>
+              {/* <p>{allCars?.message}</p> */}
             </div>
           )}
         </div>

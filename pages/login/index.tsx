@@ -40,7 +40,7 @@ const Login = () => {
     onSuccess: (data) => {
       if(!data.errors){
         setUserCookies(data.response.token, userInfo.email || '', false, data.response.clientPreferences);
-        window.location.href = '/';
+        window.location.href = '/bookings';
       }
     },
   });

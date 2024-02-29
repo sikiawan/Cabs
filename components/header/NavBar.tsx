@@ -121,7 +121,7 @@ const NavBar: React.FC = () => {
     <div className={`fixed z-10 w-full ${scrolling ? 'bg-white' : 'bg-transparent'}`}>
       <div className='mx-auto px-2 sm:px-6 lg:px-8'>
         <div className='relative flex h-16 items-center justify-between'>
-          <div className='absolute inset-y-0 flex items-center sm:hidden'>
+          <div className='absolute inset-y-0 flex items-center md:hidden'>
             <button
               onClick={() => setMenuOpen(!isMenuOpen)}
               type='button'
@@ -163,7 +163,7 @@ const NavBar: React.FC = () => {
             alt='logo'
             width={118}
             height={18}
-            className='object-contain'
+            className='object-contain m-10'
           />
           </div>
 
@@ -220,17 +220,17 @@ const NavBar: React.FC = () => {
                 </li>
                 <li>
                   <Link
-                    href='/faq'
+                    href='/contactus'
                     className={`block rounded px-3 py-2 font-extrabold md:p-0 ${
-                      router.pathname === '/faq'
+                      router.pathname === '/contactus'
                         ? 'bg-[#5ac1a7] text-[#5ac1a7] hover:text-gray-900 md:bg-transparent md:text-[#5ac1a7]'
                         : 'text-gray-900 hover:bg-[#5ac1a7] md:border-0 md:hover:bg-transparent md:hover:text-[#5ac1a7]'
                     }`}
                     aria-current={
-                      router.pathname === '/faq' ? 'page' : undefined
+                      router.pathname === '/contactus' ? 'page' : undefined
                     }
                   >
-                    {t.faq}
+                    {t.contactUs}
                   </Link>
                 </li>
               </ul>
@@ -278,59 +278,42 @@ const NavBar: React.FC = () => {
               </div>
             ))} */}
           </div>
-          <div className='relative ml-3 flex flex-row gap-2'>
-            <Select
+          <div className='flex sm:items-center'>
+          <Select
               value={locale}
               onValueChange={(newValue) => changeLanguage(newValue)}
             >
               <SelectTrigger className='bg-transparent'>
                 {LangDropDown.find((op) => op.value === locale)?.label}
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className='bg-transparent'>
                 {LangDropDown.map((op) => (
-                  <SelectItem className='bg-white' value={op.value} key={op.value}>
+                  <SelectItem className='bg-white border-collapse' value={op.value} key={op.value}>
                     {op.label}
                   </SelectItem>
                 ))}
               </SelectContent>
             </Select>
-            {/* <Select
-              value={theme}
-              onValueChange={(newValue) => {
-                changeTheme(newValue);
-              }}
-            >
-              <SelectTrigger>{theme}</SelectTrigger>
-              <SelectContent>
-                {themes.map((op) => (
-                  <SelectItem value={op.value} key={op.value}>
-                    {op.label}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select> */}
-          </div>
-          <div className='sm:ml-6 sm:flex sm:items-center'>
             {/* Profile dropdown */}
             {email && (
-              <div className='relative ml-3'>
+              <div className='hidden md:flex relative ml-3'>
                 <div className='relative'>
                   <button
                     type='button'
                     onClick={(event) =>
                       handleToggleDropdownMenu('StaticDropdown', event)
                     }
-                    className='flex rounded-xl bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800'
+                    className='flex bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800'
                   >
                     <span className='sr-only'>Open Static Dropdown menu</span>
                     <img
-                      className='h-8 w-8 rounded-full'
+                      className='h-8 w-12'
                       src='https://localhost:7160/Image/mine234629318.jpg'
                       alt='Static Dropdown'
                     />
                   </button>
                   {openDropdownMenu === 'StaticDropdown' && (
-                    <div className='absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'>
+                    <div className='absolute ltr:right-0 rtl:left-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'>
                       <div
                         className='text-md block px-4 py-2 text-sm font-bold text-gray-700'
                         role='menuitem'
@@ -342,19 +325,19 @@ const NavBar: React.FC = () => {
                         href='/static-item-1'
                         className='block px-4 py-2 text-sm text-gray-700'
                       >
-                        Your Profile
+                        {t.yourProfile}
                       </a>
                       <a
                         href='/static-item-2'
                         className='block px-4 py-2 text-sm text-gray-700'
                       >
-                        Settings
+                        {t.settings}
                       </a>
                       <a
                         href='/logout'
                         className='block px-4 py-2 text-sm text-gray-700'
                       >
-                        SignOut
+                        {t.signOut}
                       </a>
                     </div>
                   )}
@@ -366,7 +349,7 @@ const NavBar: React.FC = () => {
       </div>
 
       {isMenuOpen && (
-        <div className='sm:hidden' onClick={() => setMenuOpen(true)}>
+        <div className='md:hidden' onClick={() => setMenuOpen(true)}>
           <div className='space-y-1 px-2 pb-3'>
             <ul className='mt-4 flex flex-col rounded-lg border w-48 border-gray-100 bg-gray-50 p-4 font-medium md:mt-0 md:flex-row rtl:space-x-reverse'>
               <li>
@@ -381,7 +364,7 @@ const NavBar: React.FC = () => {
                     router.pathname === '/bookacab' ? 'page' : undefined
                   }
                 >
-                  Home
+                  {t.home}
                 </Link>
               </li>
               <li>
@@ -396,7 +379,7 @@ const NavBar: React.FC = () => {
                     router.pathname === '/cabsbooking' ? 'page' : undefined
                   }
                 >
-                  Cabs Booking
+                  {t.cabsBooking}
                 </Link>
               </li>
               <li>
@@ -411,23 +394,74 @@ const NavBar: React.FC = () => {
                     router.pathname === '/aboutus' ? 'page' : undefined
                   }
                 >
-                  About Us
+                  {t.aboutUs}
                 </Link>
               </li>
               <li>
                 <Link
-                  href='/faq'
+                  href='/contactus'
                   className={`block rounded px-3 py-2 font-extrabold ${
-                    router.pathname === '/faq'
+                    router.pathname === '/contactus'
                       ? 'text-[#5ac1a7] hover:text-gray-900'
                       : 'text-gray-900 hover:bg-[#5ac1a7]'
                   }`}
                   aria-current={
-                    router.pathname === '/faq' ? 'page' : undefined
+                    router.pathname === '/contactus' ? 'page' : undefined
                   }
                 >
-                  FAQ
+                  {t.contactUs}
                 </Link>
+              </li>
+              <li>
+              {email && (
+              <div className='flex relative ml-3'>
+                <div className='relative'>
+                  <button
+                    type='button'
+                    onClick={(event) =>
+                      handleToggleDropdownMenu('StaticDropdown', event)
+                    }
+                    className='flex bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800'
+                  >
+                    <span className='sr-only'>Open Static Dropdown menu</span>
+                    <img
+                      className='h-8 w-8'
+                      src='https://localhost:7160/Image/mine234629318.jpg'
+                      alt='Static Dropdown'
+                    />
+                  </button>
+                  {openDropdownMenu === 'StaticDropdown' && (
+                    <div className='absolute z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'>
+                      <div
+                        className='text-md block px-4 py-2 text-sm font-bold text-gray-700'
+                        role='menuitem'
+                        id='user-menu-item-0'
+                      >
+                        {email}
+                      </div>
+                      <a
+                        href='/static-item-1'
+                        className='block px-4 py-2 text-sm text-gray-700'
+                      >
+                        {t.yourProfile}
+                      </a>
+                      <a
+                        href='/static-item-2'
+                        className='block px-4 py-2 text-sm text-gray-700'
+                      >
+                        {t.settings}
+                      </a>
+                      <a
+                        href='/logout'
+                        className='block px-4 py-2 text-sm text-gray-700'
+                      >
+                        {t.signOut}
+                      </a>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
               </li>
             </ul>
             {/* {nestedMenuItems.map((menuItem) => (

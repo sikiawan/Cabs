@@ -17,28 +17,92 @@ function Home({ searchParams }: HomeProps) {
   const { locale } = router;
   const t = locale === 'en' ? en : ar;
   
-  const [allCars, setAllCars] = useState<any>([]);
-  const [isDataEmpty, setIsDataEmpty] = useState(false);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const cars = await fetchCars({
-          manufacturer: '',
-          year: 2022,
-          fuel: '',
-          limit: 10,
-          model: '',
-        });
-        setAllCars(cars);
-        setIsDataEmpty(!Array.isArray(cars) || cars.length < 1);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-
-    fetchData();
-  }, []);
+  const allCars = [
+    {
+      city_mpg: 16,
+      class: 'compact car',
+      combination_mpg: 19,
+      cylinders: 6,
+      displacement: 2.8,
+      drive: 'fwd',
+      fuel_type: 'gas',
+      highway_mpg: 26,
+      make: 'audi',
+      model: 'a4',
+      transmission: 'a',
+      year: 1996
+    },
+    {
+      city_mpg: 17,
+      class: 'compact car',
+      combination_mpg: 20,
+      cylinders: 6,
+      displacement: 2.8,
+      drive: 'fwd',
+      fuel_type: 'gas',
+      highway_mpg: 25,
+      make: 'audi',
+      model: 'a4',
+      transmission: 'm',
+      year: 1996
+    },
+    {
+      city_mpg: 16,
+      class: 'compact car',
+      combination_mpg: 19,
+      cylinders: 6,
+      displacement: 2.8,
+      drive: 'awd',
+      fuel_type: 'gas',
+      highway_mpg: 25,
+      make: 'audi',
+      model: 'a4 quattro',
+      transmission: 'a',
+      year: 1996
+    },
+    {
+      city_mpg: 17,
+      class: 'compact car',
+      combination_mpg: 20,
+      cylinders: 6,
+      displacement: 2.8,
+      drive: 'awd',
+      fuel_type: 'gas',
+      highway_mpg: 24,
+      make: 'audi',
+      model: 'a4 quattro',
+      transmission: 'm',
+      year: 1996
+    },
+    {
+      city_mpg: 18,
+      class: 'compact car',
+      combination_mpg: 21,
+      cylinders: 4,
+      displacement: 1.8,
+      drive: 'fwd',
+      fuel_type: 'gas',
+      highway_mpg: 27,
+      make: 'audi',
+      model: 'a4',
+      transmission: 'a',
+      year: 1997
+    },
+    {
+      city_mpg: 18,
+      class: 'compact car',
+      combination_mpg: 21,
+      cylinders: 4,
+      displacement: 1.8,
+      drive: 'fwd',
+      fuel_type: 'gas',
+      highway_mpg: 27,
+      make: 'audi',
+      model: 'a4',
+      transmission: 'a',
+      year: 1997
+    }
+  ];
   return (
     <main className='overflow-hidden'>
       <NavBar />
@@ -59,23 +123,11 @@ function Home({ searchParams }: HomeProps) {
           </div>
         </div>
 
-        {!isDataEmpty ? (
-          <section>
+        <section>
             <div className='home__cars-wrapper'>
               {allCars?.map((car: any) => <CarCard key={car.id} car={car} />)}
             </div>
-
-            {/* <ShowMore
-              pageNumber={(searchParams.limit || 10) / 10}
-              isNext={(searchParams.limit || 10) > allCars.length}
-            /> */}
           </section>
-        ) : (
-          <div className='home__error-container'>
-            <h2 className='text-xl font-bold text-black'>Oops, no results</h2>
-            <p>{allCars?.message}</p>
-          </div>
-        )}
       </div>
       <Footer />
     </main>

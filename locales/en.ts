@@ -67,5 +67,11 @@ export default {
   allRightsReserved:"All Rights Reserved",
   privacyPolicy:"Privacy & Policy",
   termsCondition:"Terms & Condition",
-
+  subject: "Subject",
+  message: "Message",
+  send: "Send",
+  contactUs : "Contact Us",
+  yourProfile: "Your Profile",
+  signOut : "Sign Out",
+  settings : "Settings",
 };

@@ -3,7 +3,7 @@ import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
 import SearchBar from '@/components/Searchbar';
 import NavBar from '@/components/header/NavBar';
-import { fuels, yearsOfProduction } from '@/constants/constants';
+import { allCars, fuels, yearsOfProduction } from '@/constants/constants';
 import ar from '@/locales/ar';
 import en from '@/locales/en';
 import { HomeProps } from '@/types/intefaces';
@@ -16,92 +16,6 @@ function Home({ searchParams }: HomeProps) {
   const { locale } = router;
   const t = locale === 'en' ? en : ar;
   
-  const allCars = [
-    {
-      city_mpg: 16,
-      class: 'compact car',
-      combination_mpg: 19,
-      cylinders: 6,
-      displacement: 2.8,
-      drive: 'fwd',
-      fuel_type: 'gas',
-      highway_mpg: 26,
-      make: 'audi',
-      model: 'a4',
-      transmission: 'a',
-      year: 1996
-    },
-    {
-      city_mpg: 17,
-      class: 'compact car',
-      combination_mpg: 20,
-      cylinders: 6,
-      displacement: 2.8,
-      drive: 'fwd',
-      fuel_type: 'gas',
-      highway_mpg: 25,
-      make: 'audi',
-      model: 'a4',
-      transmission: 'm',
-      year: 1996
-    },
-    {
-      city_mpg: 16,
-      class: 'compact car',
-      combination_mpg: 19,
-      cylinders: 6,
-      displacement: 2.8,
-      drive: 'awd',
-      fuel_type: 'gas',
-      highway_mpg: 25,
-      make: 'audi',
-      model: 'a4 quattro',
-      transmission: 'a',
-      year: 1996
-    },
-    {
-      city_mpg: 17,
-      class: 'compact car',
-      combination_mpg: 20,
-      cylinders: 6,
-      displacement: 2.8,
-      drive: 'awd',
-      fuel_type: 'gas',
-      highway_mpg: 24,
-      make: 'audi',
-      model: 'a4 quattro',
-      transmission: 'm',
-      year: 1996
-    },
-    {
-      city_mpg: 18,
-      class: 'compact car',
-      combination_mpg: 21,
-      cylinders: 4,
-      displacement: 1.8,
-      drive: 'fwd',
-      fuel_type: 'gas',
-      highway_mpg: 27,
-      make: 'audi',
-      model: 'a4',
-      transmission: 'a',
-      year: 1997
-    },
-    {
-      city_mpg: 18,
-      class: 'compact car',
-      combination_mpg: 21,
-      cylinders: 4,
-      displacement: 1.8,
-      drive: 'fwd',
-      fuel_type: 'gas',
-      highway_mpg: 27,
-      make: 'audi',
-      model: 'a4',
-      transmission: 'a',
-      year: 1997
-    }
-  ];
   return (
     <main className='overflow-hidden'>
       <NavBar />

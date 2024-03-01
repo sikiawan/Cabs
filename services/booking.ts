@@ -32,6 +32,7 @@ export const getBookings = async (
 
 // single booking
 export const getBooking = async (id: string) => {
+  debugger;
   const response = await fetch(
     `${API_CONFIG.BASE_URL}api/Booking/GetById?id=${id}`
   );
@@ -78,6 +79,7 @@ export async function deleteBooking(id: string) {
 // contact us
 export async function contactUs(postData: any) {
   try {
+    debugger;
     const response = await fetch(`${API_CONFIG.BASE_URL}api/Booking/ContactUs`, {
   method: 'POST',
   headers: {

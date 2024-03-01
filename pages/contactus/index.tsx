@@ -23,10 +23,11 @@ function ContactUs() {
   const { mutate: sendEmail, isPending } = useMutation({
     mutationFn: async () => {
       const postData = {
-        ToEmail: email,
-        Subject: subject,
-        Body: message,
+        email: email,
+        subject: subject,
+        body: message,
       };
+      debugger;
       const result = await contactUs(postData);
       return result;
     },
@@ -36,8 +37,8 @@ function ContactUs() {
     onSuccess: (data) => {
       clear();
       toast({
-        title: "Sent Successfully",
-        description: "we will contact you as soon as possible",
+        title: data.management,
+        description: data.msg,
       });
     },
   });

@@ -74,4 +74,5 @@ export default {
   yourProfile: "ملفك الشخصي",
   signOut : "خروج",
   settings : "إعدادات",
+  instantWhatsApp : "واتساب فوري",
 };

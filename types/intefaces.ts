@@ -21,6 +21,8 @@ export interface CarProps {
   fuel_type: string;
   highway_mpg: number;
   make: string;
+  urMake: string;
+  arMake: string;
   model: string;
   transmission: string;
   year: number;

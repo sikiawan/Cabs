@@ -74,4 +74,5 @@ export default {
   yourProfile: "Your Profile",
   signOut : "Sign Out",
   settings : "Settings",
+  instantWhatsApp : "Instant WhatsApp",
 };

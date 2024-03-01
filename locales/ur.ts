@@ -74,5 +74,6 @@ export default {
     yourProfile: "آپ کی پروفائل",
     signOut : "باہر جائیں",
     settings : "ترتیبات",
+    instantWhatsApp : "فوری واٹس ایپ",
   };
   

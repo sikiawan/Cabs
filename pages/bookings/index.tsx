@@ -190,7 +190,7 @@ const Bookings = () => {
     if (isLoading) {
       return (
         <TableRow>
-          <TableCell colSpan={3}>
+          <TableCell colSpan={8}>
             <div className='flex justify-center'>
               <Loader2 className='mr-2 h-10 w-10 animate-spin' />
             </div>
@@ -520,6 +520,7 @@ const Bookings = () => {
                             onValueChange={(newValue) =>
                               setVehicleType(newValue)
                             }
+                            required
                           >
                             <SelectTrigger className='text-white'>
                               {vehicleType

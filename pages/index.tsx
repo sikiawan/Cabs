@@ -10,7 +10,7 @@ import {
   SelectTrigger,
 } from '@/components/ui/select';
 import { toast } from '@/components/ui/use-toast';
-import { vehicleTypes } from '@/constants/constants';
+import { allCars, vehicleTypes } from '@/constants/constants';
 import { addBooking } from '@/services/booking';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import CarCard from '@/components/CarCard';
@@ -86,92 +86,6 @@ const BookACab = () => {
     //'kaba.jpg',
     //'nabvi.jpg',
   ];
-const allCars = [
-  {
-    city_mpg: 16,
-    class: 'compact car',
-    combination_mpg: 19,
-    cylinders: 6,
-    displacement: 2.8,
-    drive: 'fwd',
-    fuel_type: 'gas',
-    highway_mpg: 26,
-    make: 'audi',
-    model: 'a4',
-    transmission: 'a',
-    year: 1996
-  },
-  {
-    city_mpg: 17,
-    class: 'compact car',
-    combination_mpg: 20,
-    cylinders: 6,
-    displacement: 2.8,
-    drive: 'fwd',
-    fuel_type: 'gas',
-    highway_mpg: 25,
-    make: 'audi',
-    model: 'a4',
-    transmission: 'm',
-    year: 1996
-  },
-  {
-    city_mpg: 16,
-    class: 'compact car',
-    combination_mpg: 19,
-    cylinders: 6,
-    displacement: 2.8,
-    drive: 'awd',
-    fuel_type: 'gas',
-    highway_mpg: 25,
-    make: 'audi',
-    model: 'a4 quattro',
-    transmission: 'a',
-    year: 1996
-  },
-  {
-    city_mpg: 17,
-    class: 'compact car',
-    combination_mpg: 20,
-    cylinders: 6,
-    displacement: 2.8,
-    drive: 'awd',
-    fuel_type: 'gas',
-    highway_mpg: 24,
-    make: 'audi',
-    model: 'a4 quattro',
-    transmission: 'm',
-    year: 1996
-  },
-  {
-    city_mpg: 18,
-    class: 'compact car',
-    combination_mpg: 21,
-    cylinders: 4,
-    displacement: 1.8,
-    drive: 'fwd',
-    fuel_type: 'gas',
-    highway_mpg: 27,
-    make: 'audi',
-    model: 'a4',
-    transmission: 'a',
-    year: 1997
-  },
-  {
-    city_mpg: 18,
-    class: 'compact car',
-    combination_mpg: 21,
-    cylinders: 4,
-    displacement: 1.8,
-    drive: 'fwd',
-    fuel_type: 'gas',
-    highway_mpg: 27,
-    make: 'audi',
-    model: 'a4',
-    transmission: 'a',
-    year: 1997
-  }
-];
   //const coverRef = useRef<HTMLDivElement>(null);
   // useEffect(() => {
   //   // const fetchData = async () => {

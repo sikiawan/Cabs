@@ -39,7 +39,7 @@ const Footer = () => {
           </p>
         </div>
 
-        <div className='footer__links'>
+        {/* <div className='footer__links'>
           {footerLinks.map((item) => (
             <div key={item.title} className='footer__link'>
               <h3 className="font-bold">{getLocalizedTitle(item)}</h3>
@@ -56,7 +56,7 @@ const Footer = () => {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
 
       <div className='mt-10 flex flex-wrap items-center justify-between border-t border-gray-100 px-6 py-10 sm:px-16'>

@@ -83,23 +83,7 @@ const NavBar: React.FC = () => {
     );
     setLogo(clientPreference.logo);
   };
-  const nestedMenuItems = buildMenuTree(menuItems);
 
-  function buildMenuTree(menuItems: MenuItem[], parentId = 0): MenuItem[] {
-    const menuTree: MenuItem[] = [];
-
-    menuItems
-      .filter((item) => item.parentId === parentId)
-      .forEach((item) => {
-        const subItems = buildMenuTree(menuItems, item.itemId);
-        if (subItems.length > 0) {
-          item.subItems = subItems;
-        }
-        menuTree.push(item);
-      });
-
-    return menuTree;
-  }
   const cookies = parseCookies();
   const handleScroll = () => {
     const offset = window.scrollY;

@@ -33,10 +33,6 @@ const Footer = () => {
             height={18}
             className='object-contain'
           />
-          <p className='text-base text-gray-700'>
-            Carhub 2024 <br />
-            {t.allRightsReserved} &copy;
-          </p>
         </div>
 
         {/* <div className='footer__links'>

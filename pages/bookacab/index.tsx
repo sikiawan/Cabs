@@ -14,7 +14,6 @@ import { vehicleTypes } from '@/constants/constants';
 import { addBooking } from '@/services/booking';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import CarCard from '@/components/CarCard';
-import CustomFilter from '@/components/CustomFilter';
 import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
 import SearchBar from '@/components/Searchbar';
@@ -173,40 +172,40 @@ const allCars = [
     year: 1997
   }
 ];
-  const coverRef = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    // const fetchData = async () => {
-    //   try {
-    //     const cars = await fetchCars({
-    //       manufacturer: '',
-    //       year: 2022,
-    //       fuel: '',
-    //       limit: 10,
-    //       model: '',
-    //     });
-    //     console.log(cars);
-    //     setAllCars(cars);
-    //     setIsDataEmpty(!Array.isArray(cars) || cars.length < 1);
-    //   } catch (error) {
-    //     console.error('Error fetching data:', error);
-    //   }
-    // };
+  //const coverRef = useRef<HTMLDivElement>(null);
+  // useEffect(() => {
+  //   // const fetchData = async () => {
+  //   //   try {
+  //   //     const cars = await fetchCars({
+  //   //       manufacturer: '',
+  //   //       year: 2022,
+  //   //       fuel: '',
+  //   //       limit: 10,
+  //   //       model: '',
+  //   //     });
+  //   //     console.log(cars);
+  //   //     setAllCars(cars);
+  //   //     setIsDataEmpty(!Array.isArray(cars) || cars.length < 1);
+  //   //   } catch (error) {
+  //   //     console.error('Error fetching data:', error);
+  //   //   }
+  //   // };
 
-    // fetchData();
+  //   // fetchData();
 
 
-    let currentIndex = 0;
+  //   let currentIndex = 0;
 
-    const changeBackgroundImage = () => {
-      if (coverRef.current) {
-        coverRef.current.style.backgroundImage = `url('${slideshowImages[currentIndex]}')`;
-      }      currentIndex = (currentIndex + 1) % slideshowImages.length;
-    };
+  //   const changeBackgroundImage = () => {
+  //     if (coverRef.current) {
+  //       coverRef.current.style.backgroundImage = `url('${slideshowImages[currentIndex]}')`;
+  //     }      currentIndex = (currentIndex + 1) % slideshowImages.length;
+  //   };
 
-    const slideshowInterval = setInterval(changeBackgroundImage, 5000); // Change image every 5 seconds
+  //   const slideshowInterval = setInterval(changeBackgroundImage, 5000); // Change image every 5 seconds
 
-    return () => clearInterval(slideshowInterval);
-  }, []);
+  //   return () => clearInterval(slideshowInterval);
+  // }, [slideshowImages]);
 
 
   

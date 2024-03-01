@@ -116,7 +116,7 @@ const NavBar: React.FC = () => {
       document.removeEventListener('click', handleDocumentClick);
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [cookies.username, getLogo]);
   return (
     <div className={`fixed z-10 w-full ${scrolling ? 'bg-white' : 'bg-transparent'}`}>
       <div className='mx-auto px-2 sm:px-6 lg:px-8'>

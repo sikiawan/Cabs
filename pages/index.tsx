@@ -105,7 +105,7 @@ export default function Home() {
           </div>
         </div>
         <div className='grid gap-8'>
-          <DatePicker date={date} setDate={setDate} />
+          <DatePicker date={date} setDate={setDate} label='abc'/>
           <Button variant='destructive'>hello</Button>
         </div>
         <DropdownMenu>

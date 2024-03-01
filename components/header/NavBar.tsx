@@ -175,14 +175,14 @@ const NavBar: React.FC = () => {
               <ul className='mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 font-medium md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:p-0 rtl:space-x-reverse dark:border-gray-700 dark:bg-gray-800 md:dark:bg-gray-900'>
                 <li>
                   <Link
-                    href='/bookacab'
+                    href='/'
                     className={`block rounded px-3 py-2 font-extrabold md:p-0 ${
-                      router.pathname === '/bookacab'
+                      router.pathname === '/'
                         ? 'bg-[#5ac1a7] text-[#5ac1a7] hover:text-gray-900 md:bg-transparent md:text-[#5ac1a7]'
                         : 'text-gray-900 hover:bg-[#5ac1a7] md:border-0 md:hover:bg-transparent md:hover:text-[#5ac1a7]'
                     }`}
                     aria-current={
-                      router.pathname === '/bookacab' ? 'page' : undefined
+                      router.pathname === '/' ? 'page' : undefined
                     }
                   >
                     {t.home}
@@ -354,14 +354,14 @@ const NavBar: React.FC = () => {
             <ul className='mt-4 flex flex-col rounded-lg border w-48 border-gray-100 bg-gray-50 p-4 font-medium md:mt-0 md:flex-row rtl:space-x-reverse'>
               <li>
                 <Link
-                  href='/bookacab'
+                  href='/'
                   className={`block rounded px-3 py-2 font-extrabold ${
-                    router.pathname === '/bookacab'
+                    router.pathname === '/'
                       ? 'text-[#5ac1a7] hover:text-gray-900'
                       : 'text-gray-900 hover:bg-[#5ac1a7]'
                   }`}
                   aria-current={
-                    router.pathname === '/bookacab' ? 'page' : undefined
+                    router.pathname === '/' ? 'page' : undefined
                   }
                 >
                   {t.home}

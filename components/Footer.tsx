@@ -23,8 +23,8 @@ const Footer = () => {
     }
   };
   return (
-    <footer className='text-black-100 mt-5 flex  flex-col border-t border-gray-100'>
-      <div className='flex flex-wrap justify-between gap-5 px-6 py-10 max-md:flex-col sm:px-16'>
+    <footer className='mt-5 flex flex-col  border-t border-gray-100 text-black-100'>
+      {/* <div className='flex flex-wrap justify-between gap-5 px-6 py-10 max-md:flex-col sm:px-16'>
         <div className='flex flex-col items-start justify-start gap-6'>
           <Image
             src='/logo.svg'
@@ -35,7 +35,7 @@ const Footer = () => {
           />
         </div>
 
-        {/* <div className='footer__links'>
+        { <div className='footer__links'>
           {footerLinks.map((item) => (
             <div key={item.title} className='footer__link'>
               <h3 className="font-bold">{getLocalizedTitle(item)}</h3>
@@ -52,20 +52,11 @@ const Footer = () => {
               </div>
             </div>
           ))}
-        </div> */}
-      </div>
+        </div> }
+      </div> */}
 
-      <div className='mt-10 flex flex-wrap items-center justify-between border-t border-gray-100 px-6 py-10 sm:px-16'>
+      <div className='mt-10 flex flex-wrap items-center justify-center border-t border-gray-100 px-6 py-10 sm:px-16'>
         <p dir='ltr'>@2024 CarHub. {t.allRightsReserved}</p>
-
-        <div className='footer__copyrights-link'>
-          <Link href='/' className='text-gray-500'>
-            {t.privacyPolicy}
-          </Link>
-          <Link href='/' className='text-gray-500'>
-            {t.termsCondition}
-          </Link>
-        </div>
       </div>
     </footer>
   );

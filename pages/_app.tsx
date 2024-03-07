@@ -5,7 +5,7 @@ import TanstackProvider from '@/providers/TanstackProvider';
 import { Toaster } from "@/components/ui/toaster"
 import { Router } from 'next/router';
 import { useState } from 'react';
-import Loading from '@/components/loading';
+import Loading from '@/components/Loading';
 
 function App({ Component, pageProps }: AppProps) {
   const [loading, setLoading]= useState(false);

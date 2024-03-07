@@ -1,11 +1,11 @@
 'use client';
 
 import Image from 'next/image';
-import CustomButton from '@/components/CustomButton';
 import { useRouter } from 'next/router';
 import en from '@/locales/en';
 import ar from '@/locales/ar';
 import ur from '@/locales/ur';
+import { Button } from './ui/button';
 const Hero = () => {
   const router = useRouter();
   const { locale } = router;
@@ -27,15 +27,16 @@ const Hero = () => {
           {t.cabsBookingSubMain}
         </p>
 
-        <CustomButton
-          title={t.exploreCabs}
-          containerStyles='bg-primary-blue text-white rounded-full mt-10'
-          handleClick={handleScroll}
-        />
+        <Button
+          className='bg-[#d01818] text-white mt-10'
+          onClick={handleScroll}
+        >
+          {t.exploreCabs}
+        </Button>
       </div>
       <div className='hero__image-container'>
         <div className='hero__image'>
-          <Image src='/hero.png' alt='hero' fill className='object-contain' />
+          <Image src='/hyundai.png' alt='hero' fill className='object-contain' />
         </div>
 
         <div className='hero__image-overlay' />

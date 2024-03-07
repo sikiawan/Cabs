@@ -28,7 +28,7 @@ import { useEffect, useRef, useState } from 'react';
 const BookACab = () => {
   const router = useRouter();
   const { locale } = router;
-  const t = locale === 'en' ? en : (locale === 'ar' ? ar : ur);
+  const t = locale === 'en' ? en : locale === 'ar' ? ar : ur;
 
   const [id, setId] = useState<string>('0');
   const [name, setName] = useState('');
@@ -86,6 +86,9 @@ const BookACab = () => {
     //'kaba.jpg',
     //'nabvi.jpg',
   ];
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
   //const coverRef = useRef<HTMLDivElement>(null);
   // useEffect(() => {
   //   // const fetchData = async () => {
@@ -107,7 +110,6 @@ const BookACab = () => {
 
   //   // fetchData();
 
-
   //   let currentIndex = 0;
 
   //   const changeBackgroundImage = () => {
@@ -121,14 +123,12 @@ const BookACab = () => {
   //   return () => clearInterval(slideshowInterval);
   // }, [slideshowImages]);
 
-
-  
   return (
     <>
       <NavBar />
-      <section className='flex items-center overflow-hidden justify-center'>
+      <section className='flex items-center justify-center overflow-hidden'>
         <div className='w-full'>
-        <div
+          <div
             id='cover'
             //ref={coverRef}
             className='mt-16 flex items-center justify-center overflow-y-auto overflow-x-hidden bg-gray-100'
@@ -139,7 +139,7 @@ const BookACab = () => {
               // Add any other background properties you need
             }}
           >
-            <div className='lg:m-32 lg:p-16 m-16 p-4 h-full w-full bg-black bg-opacity-50'>
+            <div className='m-16 h-full w-full bg-black bg-opacity-50 p-4 lg:m-32 lg:p-16'>
               <form
                 className='w-full space-y-4'
                 onSubmit={(e) => {
@@ -214,7 +214,11 @@ const BookACab = () => {
                       </SelectTrigger>
                       <SelectContent>
                         {vehicleTypes.map((op) => (
-                          <SelectItem className='text-white' value={op.value} key={op.value}>
+                          <SelectItem
+                            className='text-white'
+                            value={op.value}
+                            key={op.value}
+                          >
                             {locale == 'en' ? op.value : op.localizedValue}
                           </SelectItem>
                         ))}
@@ -311,6 +315,45 @@ const BookACab = () => {
             </div>
           )}
         </div>
+        <section className='flex items-center justify-center overflow-hidden'>
+          <div className='w-full'>
+            <div
+              id='cover'
+              className='mt-16 flex items-center justify-center overflow-y-auto overflow-x-hidden bg-gray-100'
+              style={{
+                backgroundImage: `url(kaba.jpg)`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                // Add any other background properties you need
+              }}
+            >
+              <div className='m-16 h-full w-full bg-black bg-opacity-50 p-4 text-center lg:m-32 lg:p-16'>
+                <h1 className='text-3xl text-white'>
+                  {t.clientServiceHeading}
+                </h1>
+                <br />
+                <h1 className='text-xl text-white'>
+                  {t.clientServiceSubHeading}
+                </h1>
+                <br />
+                <div className='font-bold text-white'>
+                  {t.clientServiceBody}
+                </div>
+                <br />
+                <div dir='ltr' className='text-white'>{t.phoneAt}</div>
+                <br />
+                <Button
+                  type='submit'
+                  onClick={scrollToTop}
+                  className='mx-auto mt-4 bg-[#d01818] px-5 py-2.5 text-lg font-bold text-white hover:opacity-90'
+                >
+                  {t.bookACab}
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <Footer />
       </main>
     </>

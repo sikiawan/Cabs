@@ -23,8 +23,8 @@ function Home({ searchParams }: HomeProps) {
 
       <div className='padding-x padding-y max-width mt-12' id='discover'>
         <div className='home__text-container'>
-          <h1 className='text-4xl font-extrabold'>Cab Catalogue</h1>
-          <p>Explore out cabs you might like</p>
+          <h1 className='text-4xl font-extrabold'>{t.cabCatalogue}</h1>
+          <p>{t.exploreCabsText}</p>
         </div>
 
         <div className='home__filters'>

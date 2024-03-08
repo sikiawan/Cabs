@@ -77,8 +77,82 @@ export const vehicleTypes = [
   },
   {
     id: 7,
-    value: 'Luxury Bus(18 Seater)',
+    value: 'Luxury Bus(49 Seater)',
     localizedValue: 'لکثری بس',
+  },
+  {
+    id: 7,
+    value: 'Vehicle on demand',
+    localizedValue: 'وہیکل آن ڈیمانڈ',
+  },
+];
+
+export const startDestination = [
+  {
+    id: 1,
+    value: 'Jeddah airport To Makkah Hotel',
+    localizedValue: 'جدہ ایئر پورٹ سے مکہ ہوٹل',
+  },
+  {
+    id: 2,
+    value: 'Jeddah airport to Madina Hotel',
+    localizedValue: 'جدہ ایئر پورٹ سے مدینہ ہوٹل',
+  },
+  {
+    id: 3,
+    value: 'Jeddah airport to Jeddah Hotel',
+    localizedValue: 'جدہ ایئر پورٹ سے جدہ ہوٹل',
+
+  },
+  {
+    id: 4,
+    value: 'Makkah Hotel to Madinah Hotel',
+    localizedValue: 'مکہ ہوٹل سے مدینہ ہوٹل',
+  },
+  {
+    id: 5,
+    value: 'Makkah Hotel to Jeddah airport',
+    localizedValue: 'مکہ ہوٹل سے جدہ ایئر پورٹ',
+  },
+  {
+    id: 6,
+    value: 'Makkah Hotel to Jeddah Hotel',
+    localizedValue: 'مکہ ہوٹل سے جدہ ہوٹل',
+  },
+  {
+    id: 7,
+    value: 'Makkah Ziyarats',
+    localizedValue: 'مکہ زیارات',
+  },
+  {
+    id: 8,
+    value: 'Madina Hotel to Madina Airport',
+    localizedValue: 'مدینہ ہوٹل سے مدینہ ایئر پورٹ',
+  },
+  {
+    id: 9,
+    value: 'Madina Hotel to Makkah Hotel',
+    localizedValue: 'مدینہ ہوٹل سے مکہ ہوٹل',
+  },
+  {
+    id: 10,
+    value: 'Madina Hotel to Jeddah Airport',
+    localizedValue: 'مدینہ ہوٹل سے جدہ ایئر پورٹ',
+  },
+  {
+    id: 11,
+    value: 'Madinah zyarat',
+    localizedValue: 'مدینہ زیارات',
+  },
+  {
+    id: 12,
+    value: 'Madinah to khyber zyarat ',
+    localizedValue: 'مدینہ سے خیبر زیارات',
+  },
+  {
+    id: 13,
+    value: 'Madinah to Alulaa ',
+    localizedValue: 'مدینہ سے الولا',
   },
 ];
 

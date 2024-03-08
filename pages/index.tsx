@@ -10,7 +10,7 @@ import {
   SelectTrigger,
 } from '@/components/ui/select';
 import { toast } from '@/components/ui/use-toast';
-import { allCars, vehicleTypes } from '@/constants/constants';
+import { allCars, startDestination, vehicleTypes } from '@/constants/constants';
 import { addBooking } from '@/services/booking';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import CarCard from '@/components/CarCard';
@@ -149,9 +149,9 @@ const BookACab = () => {
               >
                 <div className='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3'>
                   <div>
-                    <label className='mb-2 block text-sm font-medium text-white'>
+                    {/* <label className='mb-2 block text-sm font-medium text-white'>
                       {t.name}
-                    </label>
+                    </label> */}
                     <Input
                       type='text'
                       name='name'
@@ -164,22 +164,6 @@ const BookACab = () => {
                     />
                   </div>
                   <div>
-                    <label className='mb-2 block text-sm font-medium text-white'>
-                      {t.email}
-                    </label>
-                    <Input
-                      type='email'
-                      value={email}
-                      className='bg-navy-blue bg-[#4c4d51] text-white placeholder-white focus:border-none focus:outline-none'
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder={t.email}
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label className='mb-2 block text-sm font-medium text-white'>
-                      {t.whatsAppWithCC}
-                    </label>
                     <Input
                       type='text'
                       name='whatsapp'
@@ -192,9 +176,16 @@ const BookACab = () => {
                     />
                   </div>
                   <div>
-                    <label className='mb-2 block text-sm font-medium text-white'>
-                      {t.vehicleType}
-                    </label>
+                    <Input
+                      type='email'
+                      value={email}
+                      className='bg-navy-blue bg-[#4c4d51] text-white placeholder-white focus:border-none focus:outline-none'
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder={t.email}
+                      required
+                    />
+                  </div>
+                  <div>
                     <Select
                       value={vehicleType}
                       onValueChange={(newValue) => setVehicleType(newValue)}
@@ -226,10 +217,41 @@ const BookACab = () => {
                     </Select>
                   </div>
                   <div>
-                    <label className='mb-2 block text-sm font-medium text-white'>
-                      {t.pickUpLocation}
-                    </label>
-                    <Input
+                  <Select
+                      value={pickUpLocation}
+                      onValueChange={(newValue) => setPickUpLocation(newValue)}
+                    >
+                      <SelectTrigger className='text-white'>
+                        {pickUpLocation
+                          ? startDestination.find((op) => op.value === pickUpLocation)
+                            ? locale === 'en'
+                              ? startDestination.find(
+                                  (op) => op.value === pickUpLocation
+                                )?.value
+                              : startDestination.find(
+                                  (op) => op.value === pickUpLocation
+                                )?.localizedValue
+                            : null
+                          : t.pickUpLocation}
+                      </SelectTrigger>
+                      <SelectContent>
+                        {startDestination.map((op) => (
+                          <SelectItem
+                            className='text-white'
+                            value={op.value}
+                            key={op.value}
+                          >
+                            {locale == 'en' ? op.value : op.localizedValue}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+
+
+
+
+
+                    {/* <Input
                       type='text'
                       name='pickUpLocation'
                       id='pickUpLocation'
@@ -238,12 +260,9 @@ const BookACab = () => {
                       onChange={(e) => setPickUpLocation(e.target.value)}
                       placeholder={t.pickUpLocation}
                       required
-                    />
+                    /> */}
                   </div>
-                  <div>
-                    <label className='mb-2 block text-sm font-medium text-white'>
-                      {t.destination}
-                    </label>
+                  {/* <div>
                     <Input
                       type='text'
                       name='destination'
@@ -254,11 +273,8 @@ const BookACab = () => {
                       placeholder={t.destination}
                       required
                     />
-                  </div>
+                  </div> */}
                   <div>
-                    <label className='mb-2 block text-sm font-medium text-white'>
-                      {t.pickADate}
-                    </label>
                     <DatePicker
                       date={date}
                       setDate={setDate}

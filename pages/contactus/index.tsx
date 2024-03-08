@@ -50,13 +50,12 @@ function ContactUs() {
     <main className='overflow-hidden'>
       <NavBar />
       <div className='hero'>
-        <div className='padding-x flex-1 pt-14'>
-          <h1 className='hero__title'>{t.contactUs}</h1>
+        <div className='flex-1 pt-14'>
           {/* <div className=' h-80 w-full p-4 bg-black bg-opacity-50'> */}
           <div
             id='cover'
             //ref={coverRef}
-            className='flex h-96 w-full items-center justify-center overflow-y-auto overflow-x-hidden bg-gray-100 p-4'
+            className='flex flex-col h-[450px] w-full items-center justify-center overflow-y-auto overflow-x-hidden bg-gray-100 p-4'
             style={{
               backgroundImage: `url(makkah-cover.jpg)`,
               backgroundSize: 'cover',
@@ -64,6 +63,9 @@ function ContactUs() {
               // Add any other background properties you need
             }}
           >
+             <div>
+             <h1 className='hero__title'>{t.contactUs}</h1>
+             </div>
             <div className='h-full w-full bg-black bg-opacity-50 p-4'>
               <form
                 className='w-full space-y-4'

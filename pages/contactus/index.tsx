@@ -1,4 +1,3 @@
-import CustomButton from '@/components/CustomButton';
 import NavBar from '@/components/header/NavBar';
 import ar from '@/locales/ar';
 import en from '@/locales/en';
@@ -16,7 +15,7 @@ import Footer from '@/components/Footer';
 function ContactUs() {
   const router = useRouter();
   const { locale } = router;
-  const t = locale === 'en' ? en : (locale === 'ar' ? ar : ur);
+  const t = locale === 'en' ? en : locale === 'ar' ? ar : ur;
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
@@ -51,9 +50,21 @@ function ContactUs() {
     <main className='overflow-hidden'>
       <NavBar />
       <div className='hero'>
-      <div className='padding-x flex-1 pt-28'>
-      <h1 className='hero__title'>{t.contactUs}</h1>
-      <div className=' h-80 w-full p-4 bg-black bg-opacity-50'>
+        <div className='padding-x flex-1 pt-14'>
+          <h1 className='hero__title'>{t.contactUs}</h1>
+          {/* <div className=' h-80 w-full p-4 bg-black bg-opacity-50'> */}
+          <div
+            id='cover'
+            //ref={coverRef}
+            className='flex h-96 w-full items-center justify-center overflow-y-auto overflow-x-hidden bg-gray-100 p-4'
+            style={{
+              backgroundImage: `url(makkah-cover.jpg)`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              // Add any other background properties you need
+            }}
+          >
+            <div className='h-full w-full bg-black bg-opacity-50 p-4'>
               <form
                 className='w-full space-y-4'
                 onSubmit={(e) => {
@@ -104,7 +115,7 @@ function ContactUs() {
                       placeholder={t.message}
                       required
                     />
-                </div>
+                  </div>
                 </div>
                 <Button
                   type='submit'
@@ -115,17 +126,17 @@ function ContactUs() {
                   {t.send}
                 </Button>
               </form>
-              
             </div>
-      </div>
-      <div className='hero__image-container'>
-        <div className='hero__image'>
-          <Image src='/hero.png' alt='hero' fill className='object-contain' />
+          </div>
         </div>
-        <div className='rtl:hidden hero__image-overlay' />
+        <div className='hero__image-container'>
+          <div className='hero__image'>
+            <Image src='/hero.png' alt='hero' fill className='object-contain' />
+          </div>
+          <div className='hero__image-overlay rtl:hidden' />
+        </div>
       </div>
-    </div>
-    <Footer />
+      <Footer />
     </main>
   );
 }

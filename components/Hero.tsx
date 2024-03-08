@@ -20,7 +20,7 @@ const Hero = () => {
 
   return (
     <div dir='ltr' className='hero'>
-      <div className='padding-x flex-1 pt-36'>
+      <div className='padding-x flex-1 pt-14'>
         <h1 className='hero__title'>{t.cabsBookingMain}</h1>
 
         <p className='hero__subtitle'>

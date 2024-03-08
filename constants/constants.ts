@@ -46,23 +46,39 @@ export const bookingStatuses = [
 export const vehicleTypes = [
   {
     id: 1,
-    value: 'car',
-    localizedValue: 'کار',
+    value: 'Camry(4 Seater)',
+    localizedValue: 'کیمرے',
   },
   {
     id: 2,
-    value: 'bike',
-    localizedValue: 'بائیک',
+    value: 'H1 (7 Seater)',
+    localizedValue: 'ایچ ون',
   },
   {
     id: 3,
-    value: 'pickup',
-    localizedValue: 'پک اپ',
+    value: 'GMC(7 Seater)',
+    localizedValue: 'جی ایم سی',
 
-  },{
+  },
+  {
     id: 4,
-    value: 'van',
-    localizedValue: 'وین',
+    value: 'Staria(7 Seater)',
+    localizedValue: 'سٹاریا',
+  },
+  {
+    id: 5,
+    value: 'Hiace(12 Seater)',
+    localizedValue: 'ہائی ایس',
+  },
+  {
+    id: 6,
+    value: 'Coaster(18 Seater)',
+    localizedValue: 'کوسٹر',
+  },
+  {
+    id: 7,
+    value: 'Luxury Bus(18 Seater)',
+    localizedValue: 'لکثری بس',
   },
 ];
 
@@ -177,37 +193,37 @@ export const footerLinks = [
 export const allCars = [
   {
     city_mpg: 16,
-    class: 'compact car',
+    class: 'ford',
     combination_mpg: 19,
     cylinders: 6,
     displacement: 2.8,
     drive: 'fwd',
     fuel_type: 'gas',
     highway_mpg: 26,
-    make: 'audi',
-    urMake: 'آڈی',
-    arMake: 'آدی',
+    make: 'ford',
+    urMake: 'فورڈ',
+    arMake: 'فورڈ',
     model: 'a4',
     transmission: 'a',
     year: 1996,
-    pic:'/pngwing.com.png'
+    pic:'/Ford.webp'
   },
   {
     city_mpg: 17,
-    class: 'compact car',
+    class: 'Tucson',
     combination_mpg: 20,
     cylinders: 6,
     displacement: 2.8,
     drive: 'fwd',
     fuel_type: 'gas',
     highway_mpg: 25,
-    make: 'corola',
-    urMake: 'کرولا',
-    arMake: 'کورولا',
-    model: 'GLI',
+    make: 'Hyundai',
+    urMake: 'ٹکسن',
+    arMake: 'ٹکسن',
+    model: 'TUCSON',
     transmission: 'm',
     year: 1996,
-    pic:'/yaris.png'
+    pic:'/tucson.png'
   },
   {
     city_mpg: 16,
@@ -218,13 +234,13 @@ export const allCars = [
     drive: 'awd',
     fuel_type: 'gas',
     highway_mpg: 25,
-    make: 'Honda',
-    urMake: 'ہونڈا',
-    arMake: 'ہوندا',
-    model: 'civic',
+    make: 'Hyundai',
+    urMake: 'ہنڈائی',
+    arMake: 'ہنڈائی',
+    model: 'SONATA',
     transmission: 'a',
     year: 1996,
-    pic:'/corrola.png'
+    pic:'/Sonata.png'
   },
   {
     city_mpg: 17,
@@ -235,13 +251,13 @@ export const allCars = [
     drive: 'awd',
     fuel_type: 'gas',
     highway_mpg: 24,
-    make: 'Suzuki',
-    urMake: 'سوزوکی',
-    arMake: 'سوزوکی',
-    model: 'bolan',
+    make: 'Toyota',
+    urMake: 'ٹویوٹا',
+    arMake: 'ٹویوٹا',
+    model: 'CAMRY',
     transmission: 'm',
     year: 1996,
-    pic:'/redCar.png'
+    pic:'/Camry-Toyota.png'
   },
   {
     city_mpg: 18,
@@ -252,13 +268,13 @@ export const allCars = [
     drive: 'fwd',
     fuel_type: 'gas',
     highway_mpg: 27,
-    make: 'MCG',
-    urMake: 'ایم سی جی',
-    arMake: 'ایم سی ',
-    model: 'new',
+    make: 'Young-XL',
+    urMake: 'ینگ ایس ایل',
+    arMake: 'ینگ ایس ایل',
+    model: 'GMC',
     transmission: 'a',
     year: 1997,
-    pic:'/mercedees.png'
+    pic:'/GMC-Young-XL-1.png'
   },
   {
     city_mpg: 18,
@@ -269,12 +285,63 @@ export const allCars = [
     drive: 'fwd',
     fuel_type: 'gas',
     highway_mpg: 27,
-    make: 'audi',
-    urMake: 'آڈی',
-    arMake: 'آدی',
-    model: 'a4',
+    make: 'Toyota',
+    urMake: 'ٹویوٹا',
+    arMake: 'ٹویوٹا',
+    model: 'COASTER',
     transmission: 'a',
     year: 1997,
-    pic:'/tucson.png'
-  }
+    pic:'/Coaster-Toyota.png'
+  },
+  {
+    city_mpg: 17,
+    class: 'compact car',
+    combination_mpg: 20,
+    cylinders: 6,
+    displacement: 2.8,
+    drive: 'awd',
+    fuel_type: 'gas',
+    highway_mpg: 24,
+    make: 'Toyota',
+    urMake: 'ٹویوٹا',
+    arMake: 'ٹویوٹا',
+    model: 'HIACE',
+    transmission: 'm',
+    year: 1996,
+    pic:'/Hiace-Toyota-1.png'
+  },
+  {
+    city_mpg: 18,
+    class: 'compact car',
+    combination_mpg: 21,
+    cylinders: 4,
+    displacement: 1.8,
+    drive: 'fwd',
+    fuel_type: 'gas',
+    highway_mpg: 27,
+    make: 'Hyundai',
+    urMake: 'ہنڈائی',
+    arMake: 'ہنڈائی',
+    model: 'STARIA',
+    transmission: 'a',
+    year: 1997,
+    pic:'/Hyundai-Staria.png'
+  },
+  {
+    city_mpg: 18,
+    class: 'compact car',
+    combination_mpg: 21,
+    cylinders: 4,
+    displacement: 1.8,
+    drive: 'fwd',
+    fuel_type: 'gas',
+    highway_mpg: 27,
+    make: 'Hyundai',
+    urMake: 'ہنڈائی',
+    arMake: 'ہنڈائی',
+    model: 'STAREX-H1',
+    transmission: 'a',
+    year: 1997,
+    pic:'/Hyundai-Starex-H1.png'
+  },
 ];

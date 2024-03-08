@@ -55,17 +55,9 @@ const Footer = () => {
         </div> */}
       </div>
 
-      <div className='mt-2 flex flex-wrap items-center justify-between border-t border-gray-100 px-6 py-2'>
+      <div className='mt-2 flex flex-wrap items-center justify-center sm:justify-between border-t border-gray-100 px-6 py-2'>
         <p dir='ltr'>@2024 CarHub. {t.allRightsReserved}</p>
 
-        <div className='footer__copyrights-link'>
-          <Link href='/' className='text-gray-500'>
-            {t.privacyPolicy}
-          </Link>
-          <Link href='/' className='text-gray-500'>
-            {t.termsCondition}
-          </Link>
-        </div>
       </div>
     </footer>
   );

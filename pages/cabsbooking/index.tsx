@@ -7,9 +7,7 @@ import { allCars, fuels, yearsOfProduction } from '@/constants/constants';
 import ar from '@/locales/ar';
 import en from '@/locales/en';
 import { HomeProps } from '@/types/intefaces';
-import { fetchCars } from '@/utils';
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
 
 function Home({ searchParams }: HomeProps) {
   const router = useRouter();

@@ -147,7 +147,7 @@ const NavBar: React.FC = () => {
             alt='logo'
             width={118}
             height={18}
-            className='object-contain m-10'
+            className='object-contain mx-10'
           />
           </div>
 
@@ -339,7 +339,7 @@ const NavBar: React.FC = () => {
               <li>
                 <Link
                   href='/'
-                  className={`block rounded px-3 py-2 font-extrabold ${
+                  className={`rounded px-3 py-2 font-extrabold ${
                     router.pathname === '/'
                       ? 'text-[#5ac1a7] hover:text-gray-900'
                       : 'text-gray-900 hover:bg-[#5ac1a7]'

@@ -50,7 +50,7 @@ function ContactUs() {
   return (
     <main className='overflow-hidden'>
       <NavBar />
-      <div dir='ltr' className='hero'>
+      <div className='hero'>
       <div className='padding-x flex-1 pt-28'>
       <h1 className='hero__title'>{t.contactUs}</h1>
       <div className=' h-80 w-full p-4 bg-black bg-opacity-50'>
@@ -122,8 +122,7 @@ function ContactUs() {
         <div className='hero__image'>
           <Image src='/hero.png' alt='hero' fill className='object-contain' />
         </div>
-
-        <div className='hero__image-overlay' />
+        <div className='rtl:hidden hero__image-overlay' />
       </div>
     </div>
     <Footer />

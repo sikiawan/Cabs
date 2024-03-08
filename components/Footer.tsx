@@ -23,8 +23,8 @@ const Footer = () => {
     }
   };
   return (
-    <footer className='text-black-100 mt-5 flex  flex-col border-t border-gray-100'>
-      <div className='flex flex-wrap justify-between gap-5 px-6 py-10 max-md:flex-col sm:px-16'>
+    <footer className='text-black-100 flex  flex-col border-t border-gray-100'>
+      <div className='flex flex-wrap justify-between gap-5 px-6 py-2 max-md:flex-col sm:px-16'>
         <div className='flex flex-col items-start justify-start gap-6'>
           <Image
             src='/logo.svg'
@@ -55,7 +55,7 @@ const Footer = () => {
         </div> */}
       </div>
 
-      <div className='mt-10 flex flex-wrap items-center justify-between border-t border-gray-100 px-6 py-10 sm:px-16'>
+      <div className='mt-2 flex flex-wrap items-center justify-between border-t border-gray-100 px-6 py-2'>
         <p dir='ltr'>@2024 CarHub. {t.allRightsReserved}</p>
 
         <div className='footer__copyrights-link'>

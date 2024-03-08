@@ -189,7 +189,8 @@ export const allCars = [
     arMake: 'آدی',
     model: 'a4',
     transmission: 'a',
-    year: 1996
+    year: 1996,
+    pic:'/pngwing.com.png'
   },
   {
     city_mpg: 17,
@@ -205,7 +206,8 @@ export const allCars = [
     arMake: 'کورولا',
     model: 'GLI',
     transmission: 'm',
-    year: 1996
+    year: 1996,
+    pic:'/yaris.png'
   },
   {
     city_mpg: 16,
@@ -221,7 +223,8 @@ export const allCars = [
     arMake: 'ہوندا',
     model: 'civic',
     transmission: 'a',
-    year: 1996
+    year: 1996,
+    pic:'/corrola.png'
   },
   {
     city_mpg: 17,
@@ -237,7 +240,8 @@ export const allCars = [
     arMake: 'سوزوکی',
     model: 'bolan',
     transmission: 'm',
-    year: 1996
+    year: 1996,
+    pic:'/redCar.png'
   },
   {
     city_mpg: 18,
@@ -253,7 +257,8 @@ export const allCars = [
     arMake: 'ایم سی ',
     model: 'new',
     transmission: 'a',
-    year: 1997
+    year: 1997,
+    pic:'/mercedees.png'
   },
   {
     city_mpg: 18,
@@ -269,6 +274,7 @@ export const allCars = [
     arMake: 'آدی',
     model: 'a4',
     transmission: 'a',
-    year: 1997
+    year: 1997,
+    pic:'/tucson.png'
   }
 ];

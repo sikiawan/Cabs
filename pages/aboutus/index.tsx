@@ -17,7 +17,7 @@ function AboutUs() {
     <main>
       <NavBar />
       <div dir='ltr' className='hero'>
-        <div className='padding-x flex-1 pt-36'>
+        <div className='padding-x flex-1 pt-12'>
           <h1 className='hero__title'>
             {t.experianceHeading}
           </h1>
@@ -33,7 +33,7 @@ function AboutUs() {
             {t.exploreCabs}
           </Button>
         </div>
-        <div className='hero__image-container'>
+        <div className='xl:flex-[1.5] flex justify-end items-center w-full xl:h-screen'>
           <div className='relative z-0 h-[490px] w-[90%] xl:w-full'>
             <Image
               src='/makkah_about.jpg'

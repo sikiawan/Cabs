@@ -45,6 +45,7 @@ export const getBooking = async (id: string) => {
 // posting a booking
 export async function addBooking(postData: any) {
   try {
+    debugger;
     const response = await fetch(`${API_CONFIG.BASE_URL}api/Booking`, {
   method: 'POST',
   headers: {

@@ -38,6 +38,7 @@ const BookACab = () => {
   const [pickUpLocation, setPickUpLocation] = useState('');
   const [destination, setDestination] = useState('');
   const [date, setDate] = useState<Date | undefined>(undefined);
+  const [time, setTime] = useState('');
 
   const queryClient = useQueryClient();
   const { mutate: addOrEditRecord, isPending } = useMutation({
@@ -52,6 +53,7 @@ const BookACab = () => {
         pickUpLocation: pickUpLocation,
         destination: destination,
         bookingDate: date,
+        time : time,
       };
       const result = await addBooking(postData);
       return result;
@@ -78,6 +80,7 @@ const BookACab = () => {
     setDestination('');
     setVehicleType('');
     setDate(undefined);
+    setTime('');
   };
   //const [allCars, setAllCars] = useState<any>([]);
   const [isDataEmpty, setIsDataEmpty] = useState(false);
@@ -206,7 +209,7 @@ const BookACab = () => {
                       <SelectContent>
                         {vehicleTypes.map((op) => (
                           <SelectItem
-                            className='text-white'
+                            className='text-white text-2xl'
                             value={op.value}
                             key={op.value}
                           >
@@ -217,13 +220,15 @@ const BookACab = () => {
                     </Select>
                   </div>
                   <div>
-                  <Select
+                    <Select
                       value={pickUpLocation}
                       onValueChange={(newValue) => setPickUpLocation(newValue)}
                     >
                       <SelectTrigger className='text-white'>
                         {pickUpLocation
-                          ? startDestination.find((op) => op.value === pickUpLocation)
+                          ? startDestination.find(
+                              (op) => op.value === pickUpLocation
+                            )
                             ? locale === 'en'
                               ? startDestination.find(
                                   (op) => op.value === pickUpLocation
@@ -246,10 +251,6 @@ const BookACab = () => {
                         ))}
                       </SelectContent>
                     </Select>
-
-
-
-
 
                     {/* <Input
                       type='text'
@@ -278,7 +279,20 @@ const BookACab = () => {
                     <DatePicker
                       date={date}
                       setDate={setDate}
-                      label={t.pickADate}
+                      label={t.pickUpDate}
+                    />
+                  </div>
+                  <div className='flex flex-row'>
+                    <label className='mb-2 block bg-[#4c4d51] h-full text-sm font-medium text-white'>
+                      {t.pickUpTime}
+                    </label>
+                    <input
+                      type='time'
+                      placeholder={t.pickUpTime}
+                      value={time}
+                      onChange={(e) => setTime(e.target.value)}
+                      className='bg-navy-blue bg-[#4c4d51] w-full text-white placeholder-white focus:border-none focus:outline-none'
+                      required
                     />
                   </div>
                 </div>
@@ -356,7 +370,9 @@ const BookACab = () => {
                   {t.clientServiceBody}
                 </div>
                 <br />
-                <div dir='ltr' className='text-white'>{t.phoneAt}</div>
+                <div dir='ltr' className='text-white'>
+                  {t.phoneAt}
+                </div>
                 <br />
                 <Button
                   type='submit'

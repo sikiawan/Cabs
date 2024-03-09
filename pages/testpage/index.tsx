@@ -216,12 +216,12 @@ const BookACab = () => {
                       required
                     />
                     <label className='mb-2 block text-sm font-medium text-white'>
-                      {t.pickADate}
+                      {t.pickUpDate}
                     </label>
                     <DatePicker
                       date={date}
                       setDate={setDate}
-                      label={t.pickADate}
+                      label={t.pickUpDate}
                     />
                     <Button
                       type='submit'

@@ -154,6 +154,46 @@ export const startDestination = [
     value: 'Madinah to Alulaa ',
     localizedValue: 'مدینہ سے الولا',
   },
+  {
+    id: 15,
+    value: 'Madina zyarat & wadiye jin',
+    localizedValue: 'مدینہ زیارت اور وادی جن',
+  },
+  {
+    id: 16,
+    value: 'Jeddah to taif & return',
+    localizedValue: 'جدہ سے طائف اور واپسی',
+  },
+  {
+    id: 17,
+    value: 'Makkah to taif & return',
+    localizedValue: 'مکہ سے طائف اور واپسی',
+  },
+  {
+    id: 18,
+    value: 'Madina se badr & return',
+    localizedValue: 'مدینہ سے بدر اور واپسی',
+  },
+  {
+    id: 19,
+    value: 'Madina se khyber & return',
+    localizedValue: 'مدینہ سے خیبر اور واپسی',
+  },
+  {
+    id: 20,
+    value: 'Alula full day',
+    localizedValue: 'الولا پورا دن',
+  },
+  {
+    id: 21,
+    value: 'Per hour rate for shopping, zyarat, visit etc.',
+    localizedValue: 'شاپنگ زیارت کے لیے فی گھنٹہ کے حساب سے',
+  },
+  {
+    id: 22,
+    value: 'Other rout',
+    localizedValue: 'دیگر روٹس',
+  },
 ];
 
 export const manufacturers = [

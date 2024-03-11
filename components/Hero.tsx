@@ -28,7 +28,7 @@ const Hero = () => {
         </p>
 
         <Button
-          className='bg-[#d01818] text-white mt-10'
+          className='bg-[#5ac1a7] text-black mt-10'
           onClick={handleScroll}
         >
           {t.exploreCabs}

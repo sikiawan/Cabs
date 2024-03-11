@@ -10,7 +10,12 @@ import {
   SelectTrigger,
 } from '@/components/ui/select';
 import { toast } from '@/components/ui/use-toast';
-import { allCars, startDestination, vehicleTypes } from '@/constants/constants';
+import {
+  allCars,
+  startDestination,
+  timeLists,
+  vehicleTypes,
+} from '@/constants/constants';
 import { addBooking } from '@/services/booking';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import CarCard from '@/components/CarCard';
@@ -53,7 +58,7 @@ const BookACab = () => {
         pickUpLocation: pickUpLocation,
         destination: destination,
         bookingDate: date,
-        time : time,
+        time: time,
       };
       const result = await addBooking(postData);
       return result;
@@ -142,7 +147,7 @@ const BookACab = () => {
               // Add any other background properties you need
             }}
           >
-            <div className='m-16 h-full w-full bg-black bg-opacity-50 p-4 lg:m-32 lg:p-16'>
+            <div className='m-4 h-full w-full bg-black bg-opacity-50 p-4 md:m-16 lg:m-32 lg:p-16'>
               <form
                 className='w-full space-y-4'
                 onSubmit={(e) => {
@@ -158,7 +163,7 @@ const BookACab = () => {
                     <Input
                       type='text'
                       name='name'
-                      className='bg-navy-blue bg-[#4c4d51] text-white placeholder-white focus:border-none focus:outline-none'
+                      className='bg-navy-blue bg-white text-black placeholder-black focus:border-none focus:outline-none'
                       id='name'
                       value={name}
                       onChange={(e) => setName(e.target.value)}
@@ -171,7 +176,7 @@ const BookACab = () => {
                       type='text'
                       name='whatsapp'
                       id='whatsapp'
-                      className='bg-navy-blue bg-[#4c4d51] text-white placeholder-white focus:border-none focus:outline-none'
+                      className='bg-navy-blue bg-white text-black placeholder-black focus:border-none focus:outline-none'
                       value={whatsAppWithCC}
                       onChange={(e) => setWhatsAppWithCC(e.target.value)}
                       placeholder={t.whatsAppWithCC}
@@ -182,7 +187,7 @@ const BookACab = () => {
                     <Input
                       type='email'
                       value={email}
-                      className='bg-navy-blue bg-[#4c4d51] text-white placeholder-white focus:border-none focus:outline-none'
+                      className='bg-navy-blue bg-white text-black placeholder-black focus:border-none focus:outline-none'
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder={t.email}
                       required
@@ -193,7 +198,7 @@ const BookACab = () => {
                       value={vehicleType}
                       onValueChange={(newValue) => setVehicleType(newValue)}
                     >
-                      <SelectTrigger className='text-white'>
+                      <SelectTrigger className='text-black'>
                         {vehicleType
                           ? vehicleTypes.find((op) => op.value === vehicleType)
                             ? locale === 'en'
@@ -209,7 +214,7 @@ const BookACab = () => {
                       <SelectContent>
                         {vehicleTypes.map((op) => (
                           <SelectItem
-                            className='text-white text-2xl'
+                            className='text-xl text-black'
                             value={op.value}
                             key={op.value}
                           >
@@ -224,7 +229,7 @@ const BookACab = () => {
                       value={pickUpLocation}
                       onValueChange={(newValue) => setPickUpLocation(newValue)}
                     >
-                      <SelectTrigger className='text-white'>
+                      <SelectTrigger className='text-black'>
                         {pickUpLocation
                           ? startDestination.find(
                               (op) => op.value === pickUpLocation
@@ -242,7 +247,7 @@ const BookACab = () => {
                       <SelectContent>
                         {startDestination.map((op) => (
                           <SelectItem
-                            className='text-white'
+                            className='text-xl text-black'
                             value={op.value}
                             key={op.value}
                           >
@@ -283,28 +288,74 @@ const BookACab = () => {
                     />
                   </div>
                   <div className='flex flex-row'>
-                    <label className='mb-2 block bg-[#4c4d51] h-full text-sm font-medium text-white'>
-                      {t.pickUpTime}
-                    </label>
-                    <input
-                      type='time'
-                      placeholder={t.pickUpTime}
+                    <Select
                       value={time}
-                      onChange={(e) => setTime(e.target.value)}
-                      className='bg-navy-blue bg-[#4c4d51] w-full text-white placeholder-white focus:border-none focus:outline-none'
-                      required
-                    />
+                      onValueChange={(newValue) => setTime(newValue)}
+                    >
+                      <SelectTrigger className='text-black'>
+                        {time
+                          ? timeLists.find((op) => op.value === time)
+                            ? timeLists.find((op) => op.value === time)?.value
+                            : null
+                          : t.pickUpTime}
+                      </SelectTrigger>
+                      <SelectContent>
+                        {timeLists.map((op) => (
+                          <SelectItem
+                            className='text-xl text-black'
+                            value={op.value}
+                            key={op.value}
+                          >
+                            {op.value}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
                   </div>
                 </div>
                 <Button
                   type='submit'
                   isLoading={isPending}
                   disabled={isPending}
-                  className='bg-[#d01818] px-5 py-2.5 text-lg font-bold text-white hover:opacity-90'
+                  className='bg-[#5ac1a7] px-5 py-2.5 text-lg font-bold text-black hover:opacity-90'
                 >
                   {t.bookNow}
                 </Button>
               </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className='flex items-center justify-center overflow-hidden'>
+        <div className='w-full'>
+          <div className='flex items-center justify-center overflow-y-auto overflow-x-hidden bg-white'>
+            <div className='my-10 h-full w-full p-4 text-center'>
+              <h1 className='text-5xl font-extrabold text-black'>
+                {t.bookYourCab}
+              </h1>
+              <br />
+              <div className='mt-8 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4'>
+                <div className='flex flex-col items-center'>
+                  <h2 className='m-2 text-black'>01</h2>
+                  <img src='dateandlocation.svg' className='text-white' />
+                  <h2 className='mt-2 text-black'>{t.dateAndLocation}</h2>
+                </div>
+                <div className='flex flex-col items-center'>
+                  <h2 className='m-2 text-black'>02</h2>
+                  <img src='chooseacab.svg' className='text-white' />
+                  <h2 className='mt-2 text-black'>{t.chooseACab}</h2>
+                </div>
+                <div className='flex flex-col items-center'>
+                  <h2 className='m-2 text-black'>03</h2>
+                  <img src='makeabooking.svg' className='text-white' />
+                  <h2 className='mt-2 text-black'>{t.makeABooking}</h2>
+                </div>
+                <div className='flex flex-col items-center'>
+                  <h2 className='m-2 text-black'>03</h2>
+                  <img src='enjoyyourride.svg' className='text-white' />
+                  <h2 className='mt-2 text-black'>{t.enjoyYourRide}</h2>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -377,7 +428,7 @@ const BookACab = () => {
                 <Button
                   type='submit'
                   onClick={scrollToTop}
-                  className='mx-auto mt-4 bg-[#d01818] px-5 py-2.5 text-lg font-bold text-white hover:opacity-90'
+                  className='mx-auto mt-4 bg-[#5ac1a7] px-5 py-2.5 text-lg font-bold text-white hover:opacity-90'
                 >
                   {t.bookACab}
                 </Button>

@@ -195,6 +195,18 @@ export const startDestination = [
     localizedValue: 'دیگر روٹس',
   },
 ];
+export const timeLists = Array.from({ length: 48 }, (_, index) => {
+  const hours = Math.floor(index / 2);
+  const minutes = index % 2 === 0 ? '00' : '30';
+
+  const formattedTime = `${hours.toString().padStart(2, '0')}:${minutes} ${hours >= 12 ? 'pm' : 'am'}`;
+
+  return {
+    id: index + 1,
+    value: formattedTime,
+  };
+});
+
 
 export const manufacturers = [
   "Acura",

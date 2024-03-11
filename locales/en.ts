@@ -88,5 +88,10 @@ export default {
   companyAttitudeBody: "Our goal is to offer our customers economical, fulfilling, and premium service while fostering a strong and lasting bond. We are motivated to enhance the security, ease, affordability, comfort, and spiritual aspect of our clients’ travels.",
   fastAndSafeRiding: "Fastest and Safe Riding",
   onlineBooking: "Online Booking",
-  support : "24/7 Support"
+  support : "24/7 Support",
+  bookYourCab: "Book your Cab in four easy steps",
+  dateAndLocation: "Date & Location",
+  chooseACab:"Choose a Cab",
+  makeABooking: "Make a Booking",
+  enjoyYourRide: "Enjoy your Ride",
 };

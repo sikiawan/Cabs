@@ -23,7 +23,7 @@ export function DatePicker({ date, setDate, label }: Props) {
         <Button
           variant={'outline'}
           className={cn(
-            'w-full justify-start rounded-none text-black text-left bg-white font-normal',
+            'w-full justify-start rounded-none text-black text-left bg-[#5ac1a7] font-normal',
             !date && 'text-black'
           )}
         >
@@ -31,7 +31,7 @@ export function DatePicker({ date, setDate, label }: Props) {
           {date ? format(date, 'PPP') : <span>{label}</span>}
         </Button>
       </PopoverTrigger>
-      <PopoverContent className='w-auto p-0 rounded-none bg-white'>
+      <PopoverContent className='w-auto p-0 rounded-none bg-[#5ac1a7]'>
         <Calendar
           mode='single'
           selected={date}

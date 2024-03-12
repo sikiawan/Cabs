@@ -94,5 +94,7 @@ export default {
     chooseACab:"ایک ٹیکسی کا انتخاب کریں۔",
     makeABooking: "بکنگ کروائیں۔",
     enjoyYourRide: "اپنی سواری سے لطف اندوز ہوں۔",
+    instantBooking: "وٹس ایپ سے فوری بکنگ کریں",
+
   };
   

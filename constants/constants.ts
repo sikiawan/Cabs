@@ -90,7 +90,7 @@ export const vehicleTypes = [
 export const startDestination = [
   {
     id: 1,
-    value: 'Jeddah airport To Makkah Hotel',
+    value: 'Jeddah airport to Makkah Hotel',
     localizedValue: 'جدہ ایئر پورٹ سے مکہ ہوٹل',
   },
   {
@@ -171,12 +171,12 @@ export const startDestination = [
   },
   {
     id: 18,
-    value: 'Madina se badr & return',
+    value: 'Madina to badr & return',
     localizedValue: 'مدینہ سے بدر اور واپسی',
   },
   {
     id: 19,
-    value: 'Madina se khyber & return',
+    value: 'Madina to khyber & return',
     localizedValue: 'مدینہ سے خیبر اور واپسی',
   },
   {

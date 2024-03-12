@@ -97,6 +97,10 @@ const BookACab = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+  const handleClick = () => {
+    const url = 'https://wa.me/+966507565697?text=I%20want%20your%20Cabs%20Services';
+    window.location.href = url;
+  };
   //const coverRef = useRef<HTMLDivElement>(null);
   // useEffect(() => {
   //   // const fetchData = async () => {
@@ -139,9 +143,9 @@ const BookACab = () => {
           <div
             id='cover'
             //ref={coverRef}
-            className='mt-16 flex items-center justify-center overflow-y-auto overflow-x-hidden bg-gray-100'
+            className='mt-16 w-full flex items-center justify-center overflow-y-auto overflow-x-hidden bg-gray-100'
             style={{
-              backgroundImage: `url(makkah-cover.jpg)`,
+              backgroundImage: `url(cover2.jpeg)`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               // Add any other background properties you need
@@ -163,7 +167,7 @@ const BookACab = () => {
                     <Input
                       type='text'
                       name='name'
-                      className='bg-navy-blue bg-white text-black placeholder-black focus:border-none focus:outline-none'
+                      className='bg-navy-blue bg-[#5ac1a7] text-black placeholder-black focus:border-none focus:outline-none'
                       id='name'
                       value={name}
                       onChange={(e) => setName(e.target.value)}
@@ -176,7 +180,7 @@ const BookACab = () => {
                       type='text'
                       name='whatsapp'
                       id='whatsapp'
-                      className='bg-navy-blue bg-white text-black placeholder-black focus:border-none focus:outline-none'
+                      className='bg-navy-blue bg-[#5ac1a7] text-black placeholder-black focus:border-none focus:outline-none'
                       value={whatsAppWithCC}
                       onChange={(e) => setWhatsAppWithCC(e.target.value)}
                       placeholder={t.whatsAppWithCC}
@@ -187,7 +191,7 @@ const BookACab = () => {
                     <Input
                       type='email'
                       value={email}
-                      className='bg-navy-blue bg-white text-black placeholder-black focus:border-none focus:outline-none'
+                      className='bg-navy-blue bg-[#5ac1a7] text-black placeholder-black focus:border-none focus:outline-none'
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder={t.email}
                       required
@@ -317,7 +321,7 @@ const BookACab = () => {
                   type='submit'
                   isLoading={isPending}
                   disabled={isPending}
-                  className='bg-[#5ac1a7] px-5 py-2.5 text-lg font-bold text-black hover:opacity-90'
+                  className='bg-black px-5 py-2.5 text-lg font-bold text-white hover:opacity-90'
                 >
                   {t.bookNow}
                 </Button>
@@ -330,32 +334,44 @@ const BookACab = () => {
         <div className='w-full'>
           <div className='flex items-center justify-center overflow-y-auto overflow-x-hidden bg-white'>
             <div className='my-10 h-full w-full p-4 text-center'>
-              <h1 className='text-5xl font-extrabold text-black'>
+              <div className=' w-52 lg:w-full md:w-full'>
+              <h1 className='text-[32px] lg:text-5xl md:text-4xl font-bold text-black'>
                 {t.bookYourCab}
               </h1>
+              </div>
               <br />
               <div className='mt-8 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4'>
                 <div className='flex flex-col items-center'>
-                  <h2 className='m-2 text-black'>01</h2>
-                  <img src='dateandlocation.svg' className='text-white' />
+                <img src='step1.svg' alt='01' className='text-white' />
+                  <img src='dateandlocation.svg' alt='dateandlocation' className='text-white' />
                   <h2 className='mt-2 text-black'>{t.dateAndLocation}</h2>
                 </div>
                 <div className='flex flex-col items-center'>
-                  <h2 className='m-2 text-black'>02</h2>
-                  <img src='chooseacab.svg' className='text-white' />
+                <img src='step2.svg' alt='02' className='text-white' />
+                  <img src='chooseacab.svg' alt='choosacab' className='text-white' />
                   <h2 className='mt-2 text-black'>{t.chooseACab}</h2>
                 </div>
                 <div className='flex flex-col items-center'>
-                  <h2 className='m-2 text-black'>03</h2>
-                  <img src='makeabooking.svg' className='text-white' />
+                <img src='step3.svg' alt='03' className='text-white' />
+                  <img src='makeabooking.svg' alt='makeabooking' className='text-white' />
                   <h2 className='mt-2 text-black'>{t.makeABooking}</h2>
                 </div>
                 <div className='flex flex-col items-center'>
-                  <h2 className='m-2 text-black'>03</h2>
-                  <img src='enjoyyourride.svg' className='text-white' />
+                <img src='step4.svg' alt='04' className='text-white' />
+                  <img src='enjoyyourride.svg' alt='enjoyyourride' className='text-white' />
                   <h2 className='mt-2 text-black'>{t.enjoyYourRide}</h2>
                 </div>
+                
               </div>
+              <Button
+                  type='submit'
+                  isLoading={isPending}
+                  disabled={isPending}
+                  onClick={handleClick}
+                  className='bg-[#5ac1a7] justify-center mt-10 h-16 rounded-2xl px-5 py-2.5 text-lg font-bold text-white hover:opacity-90'
+                >
+                  {t.instantBooking}
+                </Button>
             </div>
           </div>
         </div>

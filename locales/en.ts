@@ -94,4 +94,5 @@ export default {
   chooseACab:"Choose a Cab",
   makeABooking: "Make a Booking",
   enjoyYourRide: "Enjoy your Ride",
+  instantBooking: "Instant Booking via WhatsApp",
 };

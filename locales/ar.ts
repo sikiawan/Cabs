@@ -94,4 +94,6 @@ export default {
   chooseACab:"اختر سيارة أجرة",
   makeABooking: "القيام بالحجز",
   enjoyYourRide: "استمتع برحلتك",
+  instantBooking: "الحجز الفوري عبر الواتساب",
+
 };
